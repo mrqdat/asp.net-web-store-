@@ -7,7 +7,7 @@
     
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>Star Admin Premium Bootstrap Admin Dashboard Template</title>
+    <title>Đăng Nhập</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css"/>
     <link rel="stylesheet" href="../assets/vendors/iconfonts/ionicons/css/ionicons.css"/>
@@ -57,7 +57,7 @@
                   <div class="form-group">
                     <label class="label">Username</label>
                     <div class="input-group">
-                      <asp:Textbox id="txb_username" runat="server" type="text" class="form-control" placeholder="Username" />
+                      <asp:Textbox id="txb_user" runat="server" type="text" class="form-control" placeholder="Username" />
                       <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -77,7 +77,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <button id="btn_login" runat="server" class="btn btn-primary submit-btn btn-block"   onclick="btn_login_Click">Login</button>
+                    <asp:Button runat="server" ID="btn_login1" Text="Login" class="btn btn-primary submit-btn btn-block"  onclick="btn_login_Click"/>
                   </div>
                   <div class="form-group d-flex justify-content-between">
                     <div class="form-check form-check-flat mt-0">

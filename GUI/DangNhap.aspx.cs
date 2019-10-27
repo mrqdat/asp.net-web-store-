@@ -17,15 +17,15 @@ namespace GUI
 
         protected void btn_login_Click(object sender, EventArgs e)
         {
-            string tenTK = txb_username.Text;
-            string mk = txb_username.Text;
-
             
+            string tenTK = txb_user.Text;
+            string mk = txb_pass.Text;
+           
 
             if(TaiKhoanBUS.KTDangNhap(tenTK, mk))
             {
                 Response.Write("<script>alert('Đăng nhập thành công')</script>");
-                Response.Redirect("index.html");
+                Response.Redirect("Dashboar.html");
             }
             else
             {
