@@ -88,9 +88,10 @@
     <Content Include="user\icon-fonts\fontawesome-webfont.svg" />
     <Content Include="user\img\arrow-down.png" />
     <Content Include="user\img\arrow-up.png" />
-    <Content Include="user\img\banner-bg.jpg" />
-    <Content Include="user\img\bg-2.jpg" />
-    <Content Include="user\img\bg.jpg" />
+    <Content Include="user\img\bg-1.jpg" />
+    <Content Include="user\img\bg-3.jpg" />
+    <Content Include="user\img\bg-4.jpg" />
+    <Content Include="user\img\bg2.jpg" />
     <Content Include="user\img\blog-thumbs\1.jpg" />
     <Content Include="user\img\blog-thumbs\2.jpg" />
     <Content Include="user\img\cards.png" />
