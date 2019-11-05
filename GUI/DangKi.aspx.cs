@@ -28,7 +28,10 @@ namespace GUI
 
             if (TaiKhoanBUS.ThemTK(tk))
             {
+                Session["username"] = username.Text;
                 Response.Write("<script>alert('Đăng kí thành công')</script>");
+                Response.Redirect("index.aspx");
+
             }
             else
             {

@@ -109,12 +109,12 @@
 						<h3>Your Cart</h3>
 						<ul class="product-list">
 							<li>
-								<div class="pl-thumb"><img src="img/cart/1.jpg" alt=""></div>
+								<div class="pl-thumb"><img src="img/cart/1.png" alt=""></div>
 								<h6>Animal Print Dress</h6>
 								<p>$45.90</p>
 							</li>
 							<li>
-								<div class="pl-thumb"><img src="img/cart/2.jpg" alt=""></div>
+								<div class="pl-thumb"><img src="img/cart/2.png" alt=""></div>
 								<h6>Animal Print Dress</h6>
 								<p>$45.90</p>
 							</li>

@@ -41,20 +41,21 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="product-pic-zoom">
-						<img class="product-big-img" src="img/single-product/1.jpg" alt="">
+						<img class="product-big-img" src="img/single-product/n1.jpg" alt="">
 					</div>
 					<div class="product-thumbs" tabindex="1" style="overflow: hidden; outline: none;">
 						<div class="product-thumbs-track">
-							<div class="pt active" data-imgbigurl="img/single-product/1.jpg"><img src="img/single-product/thumb-1.jpg" alt=""></div>
-							<div class="pt" data-imgbigurl="img/single-product/2.jpg"><img src="img/single-product/thumb-2.jpg" alt=""></div>
-							<div class="pt" data-imgbigurl="img/single-product/3.jpg"><img src="img/single-product/thumb-3.jpg" alt=""></div>
-							<div class="pt" data-imgbigurl="img/single-product/4.jpg"><img src="img/single-product/thumb-4.jpg" alt=""></div>
+							<div class="pt active" data-imgbigurl="img/single-product/n1.jpg"><img src="img/single-product/thumb1.jpg" alt=""></div>
+							<div class="pt" data-imgbigurl="img/single-product/n2.jpg"><img src="img/single-product/thumb2.jpg" alt=""></div>
+							<div class="pt" data-imgbigurl="img/single-product/n3.jpg"><img src="img/single-product/thumb3.jpg" alt=""></div>
+							<div class="pt" data-imgbigurl="img/single-product/n4.jpg"><img src="img/single-product/thumb4.jpg" alt=""></div>
+							<div class="pt" data-imgbigurl="img/single-product/n5.jpg"><img src="img/single-product/thumb5.jpg" alt=""></div>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6 product-details">
-					<h2 class="p-title">White peplum top</h2>
-					<h3 class="p-price">$39.90</h3>
+					<h2 class="p-title">Canon EOS R</h2>
+					<h3 class="p-price">$1699,00</h3>
 					<h4 class="p-stock">Available: <span>In Stock</span></h4>
 					<div class="p-rating">
 						<i class="fa fa-star-o"></i>
@@ -66,7 +67,7 @@
 					<div class="p-review">
 						<a href="#">3 reviews</a>|<a href="#">Add your review</a>
 					</div>
-					<div class="fw-size-choose">
+					<%--<div class="fw-size-choose">
 						<p>Size</p>
 						<div class="sc-item">
 							<input type="radio" name="sc" id="xs-size">
@@ -92,7 +93,7 @@
 							<input type="radio" name="sc" id="xxl-size">
 							<label for="xxl-size">42</label>
 						</div>
-					</div>
+					</div>--%>
 					<div class="quantity">
 						<p>Quantity</p>
                         <div class="pro-qty"><input type="text" value="1"></div>
@@ -156,71 +157,71 @@
 			<div class="section-title">
 				<h2>RELATED PRODUCTS</h2>
 			</div>
-			<div class="product-slider owl-carousel">zz
+			<div class="product-slider owl-carousel">
 				<div class="product-item">
 					<div class="pi-pic">
-						<img src="./img/product/1.jpg" alt="">
+						<img src="./img/product/1.png" alt="">
 						<div class="pi-links">
 							<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
 							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
 						</div>
 					</div>
 					<div class="pi-text">
-						<h6>$35,00</h6>
-						<p>Flamboyant Pink Top </p>
+						<h6>$1335,00</h6>
+						<p>Canon EOS RP </p>
 					</div>
 				</div>
 				<div class="product-item">
 					<div class="pi-pic">
 						<div class="tag-new">New</div>
-						<img src="./img/product/2.jpg" alt="">
+						<img src="./img/product/2.png" alt="">
 						<div class="pi-links">
 							<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
 							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
 						</div>
 					</div>
 					<div class="pi-text">
-						<h6>$35,00</h6>
-						<p>Black and White Stripes Dress</p>
+						<h6>$1699,00</h6>
+						<p>Canon EOS R </p>
 					</div>
 				</div>
 				<div class="product-item">
 					<div class="pi-pic">
-						<img src="./img/product/3.jpg" alt="">
+						<img src="./img/product/3.png" alt="">
 						<div class="pi-links">
 							<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
 							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
 						</div>
 					</div>
 					<div class="pi-text">
-						<h6>$35,00</h6>
-						<p>Flamboyant Pink Top </p>
+						<h6>$399,00</h6>
+						<p>Canon EOS D3000 </p>
 					</div>
 				</div>
 				<div class="product-item">
 						<div class="pi-pic">
-							<img src="./img/product/4.jpg" alt="">
+							<img src="./img/product/4.png" alt="">
 							<div class="pi-links">
 								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
 								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
 							</div>
 						</div>
 						<div class="pi-text">
-							<h6>$35,00</h6>
-							<p>Flamboyant Pink Top </p>
+							<h6>$999,00</h6>
+							<p>Canon EOS M6 </p>
 						</div>
 					</div>
 				<div class="product-item">
 					<div class="pi-pic">
-						<img src="./img/product/6.jpg" alt="">
+						<img src="./img/product/6.png" alt="">
 						<div class="pi-links">
 							<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
 							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
 						</div>
 					</div>
 					<div class="pi-text">
-						<h6>$35,00</h6>
-						<p>Flamboyant Pink Top </p>
+						<h6>$799,00</h6>
+						<p>Canon EOS M50 </p>
 					</div>
 				</div>
 			</div>

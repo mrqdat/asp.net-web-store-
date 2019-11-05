@@ -114,7 +114,7 @@
                 <div class="col-md-4 p-0 feature">
                     <div class="feature-inner">
                         <div class="feature-icon">
-                            <img src="img/icons/1.png" alt="#">
+                            <asp:Image runat="server" ID="icon1" src="img/icons/1.png" alt="#"/>
                         </div>
                         <h2>Fast Secure Payments</h2>
                     </div>
@@ -122,7 +122,7 @@
                 <div class="col-md-4 p-0 feature">
                     <div class="feature-inner">
                         <div class="feature-icon">
-                            <img src="img/icons/2.png" alt="#">
+                            <asp:Image runat="server" ID="icon2" src="img/icons/2.png" alt="#"/>
                         </div>
                         <h2>Premium Products</h2>
                     </div>
@@ -130,7 +130,7 @@
                 <div class="col-md-4 p-0 feature">
                     <div class="feature-inner">
                         <div class="feature-icon">
-                            <img src="img/icons/3.png" alt="#">
+                            <asp:Image runat="server" ID="icon3" src="img/icons/3.png" alt="#"/>
                         </div>
                         <h2>Free & fast Delivery</h2>
                     </div>
@@ -148,7 +148,7 @@
             <div class="product-slider owl-carousel">
                 <div class="product-item">
                     <div class="pi-pic">
-                        <img src="./img/product/1.png" alt="">
+                        <asp:Image runat="server" ID="product1" src="./img/product/1.png" alt=""/>
                         <div class="pi-links">
                             <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                             <a href=" #" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -162,7 +162,7 @@
                 <div class="product-item">
                     <div class="pi-pic">
                         <div class="tag-new">New</div>
-                        <img src="./img/product/2.png" alt="">
+                            <asp:Image runat="server" ID="product2" src="./img/product/2.png" alt=""/>
                         <div class="pi-links">
                             <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                             <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -175,7 +175,7 @@
                 </div>
                 <div class="product-item">
                     <div class="pi-pic">
-                        <img src="./img/product/3.png" alt="">
+                        <asp:Image runat="server" ID="product3" src="./img/product/3.png" alt=""/>
                         <div class="pi-links">
                             <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                             <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -188,7 +188,7 @@
                 </div>
                 <div class="product-item">
                     <div class="pi-pic">
-                        <img src="./img/product/4.png" alt="">
+                        <asp:Image runat="server" ID="product4" src="./img/product/4.png" alt=""/>
                         <div class="pi-links">
                             <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                             <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -201,7 +201,7 @@
                 </div>
                 <div class="product-item">
                     <div class="pi-pic">
-                        <img src="./img/product/6.png" alt="">
+                        <asp:Image runat="server" ID="product6" src="./img/product/6.png" alt=""/>
                         <div class="pi-links">
                             <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                             <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -242,7 +242,7 @@
                             </div>
                         </div>
                         <div class="pi-text">
-                            <h6>$1799,00</h6> 
+                            <h6>$1499,00</h6> 
                             <p>Canon EOS 90D </p>
                         </div>
                     </div>

@@ -22,6 +22,8 @@ namespace GUI
                 //ddlLoaiSanPham.DataValueField = "MaLoaiSP";
                 //ddlLoaiSanPham.AutoPostBack = true;
                 //ddlLoaiSanPham.DataBind();
+
+                //Response.Write("xin chao" + Session["username"]);
             }
 
             //protected void ddlLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)

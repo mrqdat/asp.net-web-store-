@@ -181,7 +181,7 @@
                             <div class="product-item">
                                 <div class="pi-pic">
                                     <div class="tag-sale">ON SALE</div>
-                                    <img src="./img/product/6.jpg" alt="">
+                                    <img src="./img/product/6.png" alt="">
                                     <div class="pi-links">
                                         <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -196,7 +196,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <img src="./img/product/7.jpg" alt="">
+                                    <img src="./img/product/7.png" alt="">
                                     <div class="pi-links">
                                         <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -211,7 +211,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <img src="./img/product/8.jpg" alt="">
+                                    <img src="./img/product/8.png" alt="">
                                     <div class="pi-links">
                                         <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -226,7 +226,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <img src="./img/product/10.jpg" alt="">
+                                    <img src="./img/product/10.png" alt="">
                                     <div class="pi-links">
                                         <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -241,7 +241,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <img src="./img/product/11.jpg" alt="">
+                                    <img src="./img/product/11.png" alt="">
                                     <div class="pi-links">
                                         <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -256,7 +256,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <img src="./img/product/12.jpg" alt="">
+                                    <img src="./img/product/12.png" alt="">
                                     <div class="pi-links">
                                         <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -271,7 +271,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <img src="./img/product/5.jpg" alt="">
+                                    <img src="./img/product/5.png" alt="">
                                     <div class="pi-links">
                                         <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -286,7 +286,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <img src="./img/product/9.jpg" alt="">
+                                    <img src="./img/product/9.png" alt="">
                                     <div class="pi-links">
                                         <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -301,7 +301,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <img src="./img/product/1.jpg" alt="">
+                                    <img src="./img/product/1.png" alt="">
                                     <div class="pi-links">
                                         <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -317,7 +317,7 @@
                             <div class="product-item">
                                 <div class="pi-pic">
                                     <div class="tag-new">new</div>
-                                    <img src="./img/product/2.jpg" alt="">
+                                    <img src="./img/product/2.png" alt="">
                                     <div class="pi-links">
                                         <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -332,7 +332,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <img src="./img/product/3.jpg" alt="">
+                                    <img src="./img/product/3.png" alt="">
                                     <div class="pi-links">
                                         <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
@@ -347,7 +347,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <img src="./img/product/4.jpg" alt="">
+                                    <img src="./img/product/4.png" alt="">
                                     <div class="pi-links">
                                         <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>

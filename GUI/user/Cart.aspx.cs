@@ -13,5 +13,10 @@ namespace GUI.user
         {
 
         }
+
+        public void total()
+        {
+            
+        }
     }
 }

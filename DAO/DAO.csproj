@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO_giohang.cs" />
     <Compile Include="DAO_Loaisanpham.cs" />
     <Compile Include="DAO_Sanpham.cs" />
     <Compile Include="DataProvider.cs" />

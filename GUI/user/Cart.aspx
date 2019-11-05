@@ -28,7 +28,18 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+    <script type="text/html">
+        function cal_total(){
+            var sp = document.getElementById("lb_price");
+            var sp1 = document.getElementById("lb_price1");
+            var sp2 = document.getElementById("lb_price2");
+            var sp1 = document.getElementById("lb_price");
+            var sp1 = document.getElementById("lb_price");
+            var total = document.getElementById("lb_total");
 
+            total = sp + sp1 + sp2;
+        }
+    </script>
 </asp:Content>
 
 <asp:Content ID="cart_content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -57,83 +68,76 @@
                                 <thead>
                                     <tr>
                                         <th class="product-th">Product</th>
-                                        <th class="quy-th">Quantity</th>
-                                        <th class="size-th">SizeSize</th>
+                                        <th class="quy-th">Quantity</th>                                        
                                         <th class="total-th">Price</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td class="product-col">
-                                            <img src="img/cart/1.jpg" alt="">
+                                            <img src="img/cart/1.png" alt="">
                                             <div class="pc-title">
-                                                <h4>Animal Print Dress</h4>
-                                                <p>$45.90</p>
+                                                <h4>Canon EOS RP </h4>
+                                                <p>$1335,00</p>
                                             </div>
                                         </td>
                                         <td class="quy-col">
                                             <div class="quantity">
                                                 <div class="pro-qty">
-                                                    <input type="text" value="1">
+                                                    <asp:Textbox Id="qty_sp" runat="server" type="text" value="1"/>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="size-col">
-                                            <h4>Size M</h4>
-                                        </td>
+                                      
                                         <td class="total-col">
-                                            <h4>$45.90</h4>
+                                            <asp:Label ID="lb_price" runat="server" Text="$1335,00"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="product-col">
-                                            <img src="img/cart/2.jpg" alt="">
+                                            <img src="img/cart/2.png" alt="">
                                             <div class="pc-title">
-                                                <h4>Ruffle Pink Top</h4>
-                                                <p>$45.90</p>
+                                                <h4>Canon EOS R</h4>
+                                                <p>$1699,00</p>
                                             </div>
                                         </td>
                                         <td class="quy-col">
                                             <div class="quantity">
                                                 <div class="pro-qty">
-                                                    <input type="text" value="1">
+                                                    <asp:Textbox Id="qty_sp1" runat="server" type="text" value="1"/>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="size-col">
-                                            <h4>Size M</h4>
-                                        </td>
+                                        
                                         <td class="total-col">
-                                            <h4>$45.90</h4>
+                                            <asp:Label ID="lb_price1" runat="server" Text="$1699,00"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="product-col">
-                                            <img src="img/cart/3.jpg" alt="">
+                                            <img src="img/cart/3.png" alt="">
                                             <div class="pc-title">
-                                                <h4>Skinny Jeans</h4>
-                                                <p>$45.90</p>
+                                                <h4>Canon EOS 3000D </h4>
+                                                <p>$399,00</p>
                                             </div>
                                         </td>
                                         <td class="quy-col">
                                             <div class="quantity">
                                                 <div class="pro-qty">
-                                                    <input type="text" value="1">
+                                                    <asp:Textbox Id="qty_sp2" runat="server" type="text" value="1"/>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="size-col">
-                                            <h4>Size M</h4>
-                                        </td>
+                                        
                                         <td class="total-col">
-                                            <h4>$45.90</h4>
+                                            <asp:Label ID="lb_price2" runat="server" Text="$399,00"/>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div class="total-cost">
-                            <h6>Total <span>$99.90</span></h6>
+                            <h6>Total <asp:Label ID="lb_total" runat="server" value=""/></h6>
                         </div>
                     </div>
                 </div>
@@ -161,60 +165,60 @@
                     <div class="product-item">
                         <div class="pi-pic">
                             <div class="tag-new">New</div>
-                            <img src="./img/product/2.jpg" alt="">
+                            <img src="./img/product/2.png" alt="">
                             <div class="pi-links">
                                 <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                 <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
                             </div>
                         </div>
                         <div class="pi-text">
-                            <h6>$35,00</h6>
-                            <p>Black and White Stripes Dress</p>
+                            <h6>$1699,00</h6>
+                            <p>Canon EOS R</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="product-item">
                         <div class="pi-pic">
-                            <img src="./img/product/5.jpg" alt="">
+                            <img src="./img/product/5.png" alt="">
                             <div class="pi-links">
                                 <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                 <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
                             </div>
                         </div>
                         <div class="pi-text">
-                            <h6>$35,00</h6>
-                            <p>Flamboyant Pink Top </p>
+                            <h6>$1699,00</h6>
+                            <p>Canon EOS 90D  </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="product-item">
                         <div class="pi-pic">
-                            <img src="./img/product/9.jpg" alt="">
+                            <img src="./img/product/9.png" alt="">
                             <div class="pi-links">
                                 <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                 <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
                             </div>
                         </div>
                         <div class="pi-text">
-                            <h6>$35,00</h6>
-                            <p>Flamboyant Pink Top </p>
+                            <h6>$1099,00</h6>
+                            <p>Canon EOS 6D Mark II </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="product-item">
                         <div class="pi-pic">
-                            <img src="./img/product/1.jpg" alt="">
+                            <img src="./img/product/1.png" alt="">
                             <div class="pi-links">
                                 <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                 <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
                             </div>
                         </div>
                         <div class="pi-text">
-                            <h6>$35,00</h6>
-                            <p>Flamboyant Pink Top </p>
+                            <h6>$1335,00</h6>
+                            <p>Canon EOS RP </p>
                         </div>
                     </div>
                 </div>
