@@ -67,9 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin_Dashboard.aspx" />
     <Content Include="DangKi.aspx" />
     <Content Include="DangNhap.aspx" />
-    <Content Include="Dashboard.html" />
     <Content Include="QLSanPham.aspx" />
     <Content Include="QLTaiKhoan.aspx" />
     <Content Include="user\Cart.aspx" />
@@ -142,6 +142,13 @@
     <Content Include="user\index.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Dashboard.aspx.cs">
+      <DependentUpon>Admin_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard.aspx.designer.cs">
+      <DependentUpon>Admin_Dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DangKi.aspx.cs">
       <DependentUpon>DangKi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

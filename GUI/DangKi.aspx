@@ -156,7 +156,7 @@
                   </div>
                   <div class="text-block text-center my-3">
                     <span class="text-small font-weight-semibold">Already have and account ?</span>
-                    <a href="DangNhap.aspx" class="text-black text-small">Login</a>
+                    <asp:HyperLink ID="btn_backtologin" runat="server" href="DangNhap.aspx" class="text-black text-small">Login</asp:HyperLink>
                   </div>
                 </form>
               </div>

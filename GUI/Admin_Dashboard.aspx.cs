@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace GUI
 {
-    public partial class index : System.Web.UI.MasterPage
+    public partial class Admin_Dashboard : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lb_username.Text = Session["username"].ToString() ;
+
+        }
+
+        protected void btn_logout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DangNhap.aspx");
         }
     }
 }

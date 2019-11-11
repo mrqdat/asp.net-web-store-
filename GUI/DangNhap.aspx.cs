@@ -24,8 +24,18 @@ namespace GUI
 
             if(TaiKhoanBUS.KTDangNhap(tenTK, mk))
             {
-                Response.Write("<script>alert('Đăng nhập thành công')</script>");
-                Response.Redirect("Dashboar.html");
+                Session["username"] = tenTK;
+                if (tenTK == "admin")
+                {
+                    Response.Write("<script>alert('Đăng nhập thành công')</script>");
+                    Response.Redirect("Admin_Dashboard.aspx");
+
+                }
+                else
+                {
+                    Response.Redirect("user/index.aspx");
+                    
+                }
             }
             else
             {

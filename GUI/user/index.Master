@@ -65,7 +65,7 @@
                             <div class="user-panel">
                                 <div class="up-item">
                                     <i class="flaticon-profile"></i>
-                                    <a href="../DangNhap.aspx">Sign</a> In or <a href="../Dangki.aspx">Create Account</a>
+                                    <asp:Label ID="lb_username" runat="server" ValidateRequestMode="Inherit"><a href="../DangNhap.aspx">Sign</a> In or <a href="../Dangki.aspx">Create Account</a></asp:Label>
                                 </div>
                                 <div class="up-item">
                                     <div class="shopping-card">
