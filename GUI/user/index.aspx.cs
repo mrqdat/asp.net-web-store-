@@ -14,16 +14,10 @@ namespace GUI
         {
             if (!Page.IsPostBack)
             {
-                //rptSanPham.DataSource = BUS_Sanpham.LayDSsp();
-                //rptSanPham.DataBind();
+                dtl_sanpham.DataSource = BUS_Sanpham.LayDSsp();
+                dtl_sanpham.DataBind();
 
-                //ddlLoaiSanPham.DataSource = BUS_Loaisanpham.LayDSLoaiSanPham();
-                //ddlLoaiSanPham.DataTextField = "TenLoaiSP";
-                //ddlLoaiSanPham.DataValueField = "MaLoaiSP";
-                //ddlLoaiSanPham.AutoPostBack = true;
-                //ddlLoaiSanPham.DataBind();
-
-                //Response.Write("xin chao" + Session["username"]);
+                Response.Write("xin chao" + Session["username"]);
             }
 
             //protected void ddlLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)
@@ -31,7 +25,7 @@ namespace GUI
             //    string maLoaiSP = ddlLoaiSanPham.SelectedValue;
             //    rptSanPham.DataSource = SanPhamBUS.LayDSSanPham(maLoaiSP);
             //    rptSanPham.DataBind();
-            //}
+            ////}
         }
     }
 }

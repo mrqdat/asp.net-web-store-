@@ -232,7 +232,34 @@
                 <li><a href="#">Ziess Batis</a></li>
             </ul>
             <div class="row">
-                <div class="col-lg-3 col-sm-6">
+
+                <asp:DataList id="dtl_sanpham" runat="server"  >
+                    <ItemTemplate>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="product-item">
+                                <div class="pi-pic">
+                                    <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>'  width="100%"/>
+                                    <div class="pi-links">
+                                        <i class="flaticon-bag"></i><asp:LinkButton ID="btnThemGH" runat="server" class="add-card" Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />
+                                        <%--<a href="cart.aspx" ><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+                                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>--%>
+                                    </div>
+                                </div>
+                                <div class="pi-text">
+                                    <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> 
+                                    <asp:Label ID="lblTenSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>            
+                </asp:DataList>
+              <%-- 
+                  
+                            
+                  
+                  
+                  --%>
+               <%-- <div class="col-lg-3 col-sm-6">
                     <div class="product-item">
                         <div class="pi-pic">
                             <img src="./img/product/5.png" alt="">
@@ -352,7 +379,7 @@
                             <p>Canon EOS 2000D + 18-55mm kit lens </p>
                         </div>
                     </div>
-                </div>
+                </div>--%>
             </div>
             <div class="text-center pt-5">
                 <button class="site-btn sb-line sb-dark">LOAD MORE</button>
