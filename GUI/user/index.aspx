@@ -30,6 +30,7 @@
 	<![endif]-->
 
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- Hero section -->
     <section class="hero-section">
@@ -233,26 +234,27 @@
             </ul>
             <div class="row">
 
-                <asp:DataList id="dtl_sanpham" runat="server"  >
+                <asp:Repeater id="dtl_sanpham" runat="server"  >
                     <ItemTemplate>
                         <div class="col-lg-3 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>'  width="100%"/>
+                                    <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' />   
                                     <div class="pi-links">
-                                        <i class="flaticon-bag"></i><asp:LinkButton ID="btnThemGH" runat="server" class="add-card" Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />
-                                        <%--<a href="cart.aspx" ><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>--%>
+<%--                                        <%--<i class=""></i><asp:LinkButton ID="btnThemGH" runat="server" Cssclass="add-card  flaticon-bag"  Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />--%>
+                                        <asp:LinkButton id="btn_addtocart" runat="server" href="cart.aspx" Cssclass="add-card"  CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
+                                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
                                     </div>
                                 </div>
                                 <div class="pi-text">
-                                    <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> 
+                                    <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> <br />
                                     <asp:Label ID="lblTenSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
                                 </div>
                             </div>
                         </div>
                     </ItemTemplate>            
-                </asp:DataList>
+                </asp:Repeater>
+             </div>
               <%-- 
                   
                             
@@ -380,7 +382,7 @@
                         </div>
                     </div>
                 </div>--%>
-            </div>
+            
             <div class="text-center pt-5">
                 <button class="site-btn sb-line sb-dark">LOAD MORE</button>
             </div>

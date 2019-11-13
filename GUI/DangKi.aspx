@@ -77,6 +77,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox runat="server" ID="username" type="text" class="form-control" placeholder="Username"/>
+                        <asp:RequiredFieldValidator ID="rfv_name" runat="server" controlToValidate="username" ErrorMessage="tai khoan khng duoc de trong" Display="Dynamic"></asp:RequiredFieldValidator>
                       <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -87,6 +88,8 @@
                   <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox ID="pass" runat="server" type="password" class="form-control" placeholder="Password"/>
+                        <asp:RequiredFieldValidator ID="rfv_pass" runat="server" ControlToValidate="pass" ErrorMessage="mat khau khong duoc de trong" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="rev_pass" runat="server" ControlToValidate="pass" ErrorMessage="sai dinh dang" ValidationExpression="\w{6,15}" Display="Dynamic"></asp:RegularExpressionValidator>
                       <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -94,19 +97,23 @@
                       </div>
                     </div>
                   </div>
-                  <%--<div class="form-group">
+                  <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox ID="confirm_pass" runat="server" type="password" class="form-control" placeholder="Confirm Password"/>
-                      <div class="input-group-append">
+                      <asp:RequiredFieldValidator ID="rfv_conpass" runat="server" ControlToValidate="confirm_pass" ErrorMessage="RequiredFieldValidator" Display="Dynamic"></asp:RequiredFieldValidator>
+                      <asp:CompareValidator ID="cv_conpass" runat="server" ControlToCompare="pass" ControlToValidate="confirm_pass" ErrorMessage="CompareValidator"></asp:CompareValidator>
+                        <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
                         </span>
                       </div>
                     </div>
-                  </div>--%>
+                  </div>
                   <div class="form-group">
                     <div class="input-group">
-                      <asp:TextBox ID="txb_Email" runat="server" type="password" class="form-control" placeholder="Email"/>
+                      <asp:TextBox ID="txb_Email" runat="server" type="text" class="form-control" placeholder="Email"/>
+                      <asp:RequiredFieldValidator ID="rfv_mail" runat="server" ControlToValidate="txb_Email" ErrorMessage="khong duoc de trong" Display="Dynamic"></asp:RequiredFieldValidator>
+
                       <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -116,7 +123,8 @@
                   </div>
                   <div class="form-group">
                     <div class="input-group">
-                      <asp:TextBox ID="txb_SDT" runat="server" type="password" class="form-control" placeholder="Số điện thoại"/>
+                      <asp:TextBox ID="txb_SDT" runat="server" type="text" class="form-control" placeholder="Số điện thoại"/>
+                        <asp:RegularExpressionValidator ID="rev_sdt" runat="server" ControlToValidate="txb_SDT" ErrorMessage="SDT có 10 số" ValidateExpression="0\d{9}" Display="Dynamic"></asp:RegularExpressionValidator>
                       <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -126,7 +134,8 @@
                   </div>
                   <div class="form-group">
                     <div class="input-group">
-                      <asp:TextBox ID="txb_DiaChi" runat="server" type="password" class="form-control" placeholder="Địa chỉ"/>
+                      <asp:TextBox ID="txb_DiaChi" runat="server" type="text" class="form-control" placeholder="Địa chỉ"/>
+                    
                       <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -136,7 +145,7 @@
                   </div>
                   <div class="form-group">
                     <div class="input-group">
-                      <asp:TextBox ID="txb_HoTen" runat="server" type="password" class="form-control" placeholder="Họ và tên"/>
+                      <asp:TextBox ID="txb_HoTen" runat="server" type="text" class="form-control" placeholder="Họ và tên"/>
                       <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -152,7 +161,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <button class="btn btn-primary submit-btn btn-block">Register</button>
+                    <asp:LinkButton id="btn_dangki" runat="server" class="btn btn-primary submit-btn btn-block" OnClick="btnDangKi_Click">Register</asp:LinkButton>
                   </div>
                   <div class="text-block text-center my-3">
                     <span class="text-small font-weight-semibold">Already have and account ?</span>

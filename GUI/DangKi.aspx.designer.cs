@@ -22,6 +22,15 @@ namespace GUI {
         protected global::System.Web.UI.WebControls.TextBox username;
         
         /// <summary>
+        /// rfv_name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_name;
+        
+        /// <summary>
         /// pass control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,51 @@ namespace GUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox pass;
+        
+        /// <summary>
+        /// rfv_pass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_pass;
+        
+        /// <summary>
+        /// rev_pass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_pass;
+        
+        /// <summary>
+        /// confirm_pass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox confirm_pass;
+        
+        /// <summary>
+        /// rfv_conpass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_conpass;
+        
+        /// <summary>
+        /// cv_conpass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cv_conpass;
         
         /// <summary>
         /// txb_Email control.
@@ -40,6 +94,15 @@ namespace GUI {
         protected global::System.Web.UI.WebControls.TextBox txb_Email;
         
         /// <summary>
+        /// rfv_mail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_mail;
+        
+        /// <summary>
         /// txb_SDT control.
         /// </summary>
         /// <remarks>
@@ -47,6 +110,15 @@ namespace GUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txb_SDT;
+        
+        /// <summary>
+        /// rev_sdt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_sdt;
         
         /// <summary>
         /// txb_DiaChi control.
@@ -74,6 +146,15 @@ namespace GUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox chk;
+        
+        /// <summary>
+        /// btn_dangki control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btn_dangki;
         
         /// <summary>
         /// btn_backtologin control.

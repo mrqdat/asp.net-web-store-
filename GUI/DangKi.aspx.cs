@@ -18,25 +18,30 @@ namespace GUI
 
         protected void btnDangKi_Click(object sender, EventArgs e)
         {
-            TaiKhoanDTO tk = new TaiKhoanDTO();
-            tk.TenTaiKhoan = username.Text;
-            tk.MatKhau = pass.Text;
-            tk.Email = txb_Email.Text;
-            tk.SDT = txb_SDT.Text;
-            tk.DiaChi = txb_DiaChi.Text;
-            tk.HoTen = txb_HoTen.Text;
-
-            if (TaiKhoanBUS.ThemTK(tk))
+            if (Page.IsValid)
             {
-                Session["username"] = username.Text;
-                Response.Write("<script>alert('Đăng kí thành công')</script>");
-                Response.Redirect("index.aspx");
+                TaiKhoanDTO tk = new TaiKhoanDTO();
+                tk.TenTaiKhoan = username.Text;
+                tk.MatKhau = pass.Text;
+                tk.Email = txb_Email.Text;
+                tk.SDT = txb_SDT.Text;
+                tk.DiaChi = txb_DiaChi.Text;
+                tk.HoTen = txb_HoTen.Text;
 
-            }
-            else
-            {
-                Response.Write("<script>alert('Tên tài khoản đã có người sử dụng. Đăng kí thất bại')</script>");
+                if (TaiKhoanBUS.ThemTK(tk))
+                {
+                    Session["username"] = username.Text;
+                    Response.Write("<script>alert('Đăng kí thành công')</script>");
+                    Response.Redirect("user/index.aspx");
+
+                }
+                else
+                {
+                    Response.Write("<script>alert('Tên tài khoản đã có người sử dụng. Đăng kí thất bại')</script>");
+                }
             }
         }
+
+        
     }
 }

@@ -57,8 +57,10 @@
                   <div class="form-group">
                     <label class="label">Username</label>
                     <div class="input-group">
-                      <asp:Textbox id="txb_user" runat="server" type="text" class="form-control" placeholder="Username" />
-                      <div class="input-group-append">
+                      <asp:Textbox id="txb_user" runat="server" type="text" class="form-control"  placeholder="Username" />
+                      <asp:RequiredFieldValidator ID="rvf_username" runat="server" ControlToValidate="txb_user" ErrorMessage="Bạn chưa nhập tên tài khoản" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="rgv_username" runat="server" ControlToValidate="txb_user" ErrorMessage="Tên tài khoản sai định dạng" ValidationExpression="\w{6,15}"></asp:RegularExpressionValidator>
+                        <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
                         </span>
@@ -69,6 +71,8 @@
                     <label class="label">Password</label>
                     <div class="input-group">
                       <asp:TextBox  id="txb_pass" runat="server" type="password" class="form-control" placeholder="*********" />
+                      <asp:RequiredFieldValidator ID="rvf_password" runat="server" ControlToValidate="txb_pass" ErrorMessage="Bạn chưa nhập mat khau"></asp:RequiredFieldValidator>
+
                       <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>

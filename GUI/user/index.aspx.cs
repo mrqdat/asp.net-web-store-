@@ -17,7 +17,7 @@ namespace GUI
                 dtl_sanpham.DataSource = BUS_Sanpham.LayDSsp();
                 dtl_sanpham.DataBind();
 
-                Response.Write("xin chao" + Session["username"]);
+                //Response.Write("xin chao" + Session["username"]);
             }
 
             //protected void ddlLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)

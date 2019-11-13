@@ -22,6 +22,24 @@ namespace GUI {
         protected global::System.Web.UI.WebControls.TextBox txb_user;
         
         /// <summary>
+        /// rvf_username control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvf_username;
+        
+        /// <summary>
+        /// rgv_username control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rgv_username;
+        
+        /// <summary>
         /// txb_pass control.
         /// </summary>
         /// <remarks>
@@ -29,6 +47,15 @@ namespace GUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txb_pass;
+        
+        /// <summary>
+        /// rvf_password control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvf_password;
         
         /// <summary>
         /// btn_login1 control.
