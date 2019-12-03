@@ -71,10 +71,6 @@ namespace BUS
                 return TaiKhoanDAO.XoaTK(tenTK);
             }
         }
-
-        public static bool Xoasp(string tensp)
-        {
-            throw new NotImplementedException();
-        }
+         
     }
 }

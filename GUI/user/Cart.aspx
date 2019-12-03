@@ -28,18 +28,19 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
-    <script type="text/html">
+    <%--<script type="text/javascript">
         function cal_total(){
             var sp = document.getElementById("lb_price");
             var sp1 = document.getElementById("lb_price1");
             var sp2 = document.getElementById("lb_price2");
-            var sp1 = document.getElementById("lb_price");
-            var sp1 = document.getElementById("lb_price");
-            var total = document.getElementById("lb_total");
+            var sp3 = document.getElementById("lb_price3");
+            var sp4 = document.getElementById("lb_price4");
+            var total = 0;
 
             total = sp + sp1 + sp2;
+            return total;
         }
-    </script>
+    </script>--%>
 </asp:Content>
 
 <asp:Content ID="cart_content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -57,14 +58,40 @@
 
 
     <!-- cart section end -->
-    <section class="cart-section spad">
+    <section class="cart-section spad" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="cart-table">
                         <h3>Your Cart</h3>
+                           
                         <div class="cart-table-warp">
-                            <table>
+                            <div class="container">
+                                <asp:GridView ID="grvGioHang" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="False" GridLines="None">
+                                    <Columns  >
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' width="100"/>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:BoundField DataField="TenSP" HeaderText="Product" />
+                                        <asp:BoundField DataField="GiaTien" HeaderText="Price" />
+                                        <asp:TemplateField HeaderText="Quantity">
+                                            <ItemTemplate>                                               
+                                                    <div class="quantity">
+                                                        <div class="pro-qty">
+                                                            <asp:Textbox Id="qty_sp" runat="server" type="text" value="1"/>
+                                                        </div>
+                                                    </div>                                             
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <%--<asp:BoundField DataField="SoLuong" HeaderText="Quantity" />--%>
+                                        <asp:BoundField DataField="ThanhTien" HeaderText="Total" />
+                                    </Columns>
+                                </asp:GridView>
+                                <%--Tổng tiền: <asp:Label ID="lblTongTien" runat="server" Text="0"></asp:Label> VNĐ--%>
+                            </div>
+                            <%--<table>
                                 <thead>
                                     <tr>
                                         <th class="product-th">Product</th>
@@ -73,7 +100,45 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <asp:Repeater id="rpt_slider" runat="server"  onItemCommand="rpt_slider_ItemCommand">
+                                         <ItemTemplate>
+                                             <tr>
+                                                <td class="product-col">
+                                                    <asp:Image ID="anhSP" runat="server" ImageUrl='<%# "img/cart/" + Eval("AnhMinhHoa") %>'/>
+                                                    <div class="pc-title">
+                                                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> <br />
+                                                         <asp:Label ID="Label1" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
+                                                    </div>
+                                                </td>
+                                                <td class="quy-col">
+                                                    <div class="quantity">
+                                                        <div class="pro-qty">
+                                                            <asp:Textbox Id="qty_sp" runat="server" type="text" value="1"/>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                      
+                                                <td class="total-col">
+                                                    <asp:Label ID="lb_price" runat="server" Text="1335"></asp:Label>
+                                                </td>
+                                            </tr>
+                                            <div class="product-item">
+                                                <div class="pi-pic">
+                                                    <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' />   
+                                                        <div class="pi-links">
+<%--                                        <%--<i class=""></i><asp:LinkButton ID="btnThemGH" runat="server" Cssclass="add-card  flaticon-bag"  Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />
+                                                            <asp:LinkButton id="btn_addtocart" runat="server" Cssclass="add-card" CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
+                                                            <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                                                        </div>
+                                                </div>
+                                                <div class="pi-text">
+                                                    <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> <br />
+                                                    <asp:Label ID="lblTenSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
+                                                </div>
+                                            </div>
+                                        </ItemTemplate>            
+                                    </asp:Repeater>
+                                    <%--<tr>
                                         <td class="product-col">
                                             <img src="img/cart/1.png" alt="">
                                             <div class="pc-title">
@@ -90,7 +155,7 @@
                                         </td>
                                       
                                         <td class="total-col">
-                                            <asp:Label ID="lb_price" runat="server" Text="$1335,00"/>
+                                            <asp:Label ID="lb_price" runat="server" Text="1335"></asp:Label>
                                         </td>
                                     </tr>
                                     <tr>
@@ -110,7 +175,7 @@
                                         </td>
                                         
                                         <td class="total-col">
-                                            <asp:Label ID="lb_price1" runat="server" Text="$1699,00"/>
+                                            <asp:Label ID="lb_price1" runat="server" Text="1699"/>
                                         </td>
                                     </tr>
                                     <tr>
@@ -130,14 +195,15 @@
                                         </td>
                                         
                                         <td class="total-col">
-                                            <asp:Label ID="lb_price2" runat="server" Text="$399,00"/>
+                                            <asp:Label ID="lb_price2" runat="server" Text="399"/>
                                         </td>
-                                    </tr>
+                                    </tr> 
                                 </tbody>
-                            </table>
+
+                            </table>--%>
                         </div>
-                        <div class="total-cost">
-                            <h6>Total <asp:Label ID="lb_total" runat="server" value=""/></h6>
+                        <div class="total-cost"  ">
+                            <h6>Total <asp:Label ID="lblTongTien" runat="server" Text="0"></asp:Label></h6>
                         </div>
                     </div>
                 </div>
@@ -146,7 +212,8 @@
                         <input type="text" placeholder="Enter promo code">
                         <button>Submit</button>
                     </div>
-                    <a href="#" class="site-btn">Proceed to checkout</a>
+                    <asp:Button ID="btnThanhToan" runat="server" CssClass="site-btn" Text="Proceed to checkout" OnClick="btnThanhToan_Click"/>
+                    
                     <a href="#" class="site-btn sb-dark">Continue shopping</a>
                 </div>
             </div>

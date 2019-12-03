@@ -100,8 +100,8 @@
                   <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox ID="confirm_pass" runat="server" type="password" class="form-control" placeholder="Confirm Password"/>
-                      <asp:RequiredFieldValidator ID="rfv_conpass" runat="server" ControlToValidate="confirm_pass" ErrorMessage="RequiredFieldValidator" Display="Dynamic"></asp:RequiredFieldValidator>
-                      <asp:CompareValidator ID="cv_conpass" runat="server" ControlToCompare="pass" ControlToValidate="confirm_pass" ErrorMessage="CompareValidator"></asp:CompareValidator>
+                      <asp:RequiredFieldValidator ID="rfv_conpass" runat="server" ControlToValidate="confirm_pass" ErrorMessage="phai nhap mat khau truoc" Display="Dynamic"></asp:RequiredFieldValidator>
+                      <asp:CompareValidator ID="cv_conpass" runat="server" ControlToCompare="pass" ControlToValidate="confirm_pass" ErrorMessage="mat khau khong trung khop"></asp:CompareValidator>
                         <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -112,7 +112,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox ID="txb_Email" runat="server" type="text" class="form-control" placeholder="Email"/>
-                      <asp:RequiredFieldValidator ID="rfv_mail" runat="server" ControlToValidate="txb_Email" ErrorMessage="khong duoc de trong" Display="Dynamic"></asp:RequiredFieldValidator>
+                      <asp:RequiredFieldValidator ID="rfv_mail" runat="server" ControlToValidate="txb_Email" ErrorMessage="Email khong duoc de trong" Display="Dynamic"></asp:RequiredFieldValidator>
 
                       <div class="input-group-append">
                         <span class="input-group-text">
@@ -124,7 +124,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox ID="txb_SDT" runat="server" type="text" class="form-control" placeholder="Số điện thoại"/>
-                        <asp:RegularExpressionValidator ID="rev_sdt" runat="server" ControlToValidate="txb_SDT" ErrorMessage="SDT có 10 số" ValidateExpression="0\d{9}" Display="Dynamic"></asp:RegularExpressionValidator>
+<%--                        <asp:RegularExpressionValidator ID="rev_sdt" runat="server" ControlToValidate="txb_SDT" ErrorMessage="SDT phải có 10 chữ số" ValidateExpression="\d{10}" Display="Static"></asp:RegularExpressionValidator>--%>
                       <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>

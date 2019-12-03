@@ -103,7 +103,7 @@ namespace GUI
             }
             else
             {
-                Response.Write("<script>alert('Thêm sản kphẩm thất bại');</script>");
+                Response.Write("<script>alert('Thêm sản phẩm thất bại');</script>");
             }
         }
 

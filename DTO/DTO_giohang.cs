@@ -11,9 +11,15 @@ namespace DTO
         string tentaikhoan;
         string masp;
         int soluong;
+        
 
         public string Tentaikhoan  { get => tentaikhoan; set => tentaikhoan = value; }
         public string Masp  { get => masp; set => masp = value; }
         public int Soluong { get => soluong; set => soluong = value; }
+        
+        public DTO_giohang()
+        {
+            Soluong = 1;
+        }
     }
 }

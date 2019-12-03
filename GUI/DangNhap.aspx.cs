@@ -24,21 +24,31 @@ namespace GUI
 
             if(TaiKhoanBUS.KTDangNhap(tenTK, mk))
             {
-                Session["username"] = tenTK;
+                
+                //Session.Add("username", tenTK);
+
+                HttpCookie cookie = new HttpCookie("tenTK");
+                cookie.Value = tenTK;
+                cookie.Expires = DateTime.Now.AddDays(1);
+                Response.Cookies.Add(cookie);
+
                 if (tenTK == "admin")
                 {
+                    
                     Response.Write("<script>alert('Đăng nhập thành công')</script>");
                     Response.Redirect("Admin_Dashboard.aspx");
 
                 }
                 else
                 {
+                    //Response.Redirect(Request.RawUrl);
                     Response.Redirect("user/index.aspx");
                     
                 }
             }
             else
             {
+                
                 Response.Write("<script>alert('Đăng nhập thất bại')</script>");
             }
         }

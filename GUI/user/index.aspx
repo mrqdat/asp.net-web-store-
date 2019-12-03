@@ -147,7 +147,28 @@
                 <h2>LATEST PRODUCTS</h2>
             </div>
             <div class="product-slider owl-carousel">
-                <div class="product-item">
+                 <asp:Repeater id="rpt_slider" runat="server"  onItemCommand="rpt_slider_ItemCommand">
+                    <ItemTemplate>
+                         <div class="product-item">
+                             
+                                <div class="pi-pic">
+                                    <asp:HyperLink id="hpl_sp" runat="server">
+                                        <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' /></asp:HyperLink>   
+                                    <div class="pi-links">
+<%--                                        <%--<i class=""></i><asp:LinkButton ID="btnThemGH" runat="server" Cssclass="add-card  flaticon-bag"  Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />--%>
+                                        <asp:LinkButton id="btn_addtocart" runat="server" Cssclass="add-card" CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
+                                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                                    </div>
+                                </div>
+                           
+                                <div class="pi-text">
+                                    <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> <br />
+                                    <asp:Label ID="lblTenSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
+                                </div>
+                        </div>
+                    </ItemTemplate>            
+                </asp:Repeater>
+                <%--<div class="product-item">
                     <div class="pi-pic">
                         <asp:Image runat="server" ID="product1" src="./img/product/1.png" alt=""/>
                         <div class="pi-links">
@@ -212,7 +233,7 @@
                         <h6>$799,00</h6>
                         <p>Canon EOS M5 </p>
                     </div>
-                </div>
+                </div>--%>
             </div>
         </div>
     </section>
@@ -234,7 +255,7 @@
             </ul>
             <div class="row">
 
-                <asp:Repeater id="dtl_sanpham" runat="server"  >
+                <asp:Repeater id="dtl_sanpham" runat="server"  OnItemCommand="rpt_slider_ItemCommand" >
                     <ItemTemplate>
                         <div class="col-lg-3 col-sm-6">
                             <div class="product-item">
@@ -242,7 +263,7 @@
                                     <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' />   
                                     <div class="pi-links">
 <%--                                        <%--<i class=""></i><asp:LinkButton ID="btnThemGH" runat="server" Cssclass="add-card  flaticon-bag"  Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />--%>
-                                        <asp:LinkButton id="btn_addtocart" runat="server" href="cart.aspx" Cssclass="add-card"  CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
+                                        <asp:LinkButton id="btn_addtocart" runat="server"  Cssclass="add-card"  CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
                                     </div>
                                 </div>
@@ -390,7 +411,7 @@
     </section>
 
     <!-- Banner section -->
-    <section class="banner-section">
+    <%--<section class="banner-section">
         <div class="container">
             <div class="banner set-bg" data-setbg="img/banner-bg.jpg">
                 <div class="tag-new">NEW</div>
@@ -399,6 +420,6 @@
                 <a href="#" class="site-btn">SHOP NOW</a>
             </div>
         </div>
-    </section>
+    </section>--%>
     <!-- Banner section end  -->
 </asp:Content>

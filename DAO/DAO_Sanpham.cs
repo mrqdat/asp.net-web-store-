@@ -43,7 +43,7 @@ namespace DAO
 
         public static bool Themsp(DTO_Sanpham sp)
         {
-            string query = "INSERT INTO SanPham (MaSP, TenSP, GiaTien, SoLuongTonKho, MaLoaiSP, AnhMinhHoa, TrangThai) VALUES (@ )";
+            string query = "INSERT INTO SanPham (MaSP, TenSP, GiaTien, SoLuongTonKho, MaLoaiSP, AnhMinhHoa, TrangThai) VALUES (@masp, @tensp, @giatien,@thongtin,@soluongton,@maloaisp,0,1)";
             SqlParameter[] param = new SqlParameter[6];
             param[0] = new SqlParameter("@masp", sp.Masp);
             param[1] = new SqlParameter("@tensp", sp.Tensp);

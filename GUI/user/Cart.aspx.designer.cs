@@ -13,66 +13,30 @@ namespace GUI.user {
     public partial class Cart {
         
         /// <summary>
-        /// qty_sp control.
+        /// grvGioHang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox qty_sp;
+        protected global::System.Web.UI.WebControls.GridView grvGioHang;
         
         /// <summary>
-        /// lb_price control.
+        /// lblTongTien control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_price;
+        protected global::System.Web.UI.WebControls.Label lblTongTien;
         
         /// <summary>
-        /// qty_sp1 control.
+        /// btnThanhToan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox qty_sp1;
-        
-        /// <summary>
-        /// lb_price1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_price1;
-        
-        /// <summary>
-        /// qty_sp2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox qty_sp2;
-        
-        /// <summary>
-        /// lb_price2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_price2;
-        
-        /// <summary>
-        /// lb_total control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_total;
+        protected global::System.Web.UI.WebControls.Button btnThanhToan;
     }
 }

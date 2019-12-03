@@ -28,9 +28,13 @@ namespace GUI
                 tk.DiaChi = txb_DiaChi.Text;
                 tk.HoTen = txb_HoTen.Text;
 
+                
                 if (TaiKhoanBUS.ThemTK(tk))
                 {
-                    Session["username"] = username.Text;
+                    HttpCookie cookie = new HttpCookie("tenTK");
+                    cookie.Value = username.Text;
+                    cookie.Expires = DateTime.Now.AddDays(1);
+                    Response.Cookies.Add(cookie);
                     Response.Write("<script>alert('Đăng kí thành công')</script>");
                     Response.Redirect("user/index.aspx");
 

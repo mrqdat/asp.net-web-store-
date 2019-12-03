@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_cthoadon.cs" />
     <Compile Include="BUS_giohang.cs" />
+    <Compile Include="BUS_hoadon.cs" />
     <Compile Include="BUS_Loaisanpham.cs" />
     <Compile Include="BUS_Sanpham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

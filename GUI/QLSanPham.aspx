@@ -72,10 +72,10 @@
                 <asp:BoundField DataField="TrangThai" HeaderText="Trạng Thái" />
                 <asp:TemplateField HeaderText="tùy chọn">
                     
-                        <ItemTemplate>
-                            <asp:Button ID="btnChon" runat="server" CausesValidation="False" CommandName="Chonsp" CommandArgument='<%# Eval("TenSP") %>' Text="Chọn" />
-                            <asp:Button ID="btnXoa" runat="server" CausesValidation="False" CommandName="Xoasp" CommandArgument='<%# Eval("TenSP") %>' Text="Xóa" OnClientClick="return confirm('Bạn có chắc chắn muốn xóa?');" />
-                        </ItemTemplate>
+                <ItemTemplate>
+                    <asp:Button ID="btnChon" runat="server" CausesValidation="False" CommandName="Chonsp" CommandArgument='<%# Eval("TenSP") %>' Text="Chọn" />
+                    <asp:Button ID="btnXoa" runat="server" CausesValidation="False" CommandName="Xoasp" CommandArgument='<%# Eval("TenSP") %>' Text="Xóa" OnClientClick="return confirm('Bạn có chắc chắn muốn xóa?');" />
+                </ItemTemplate>
                     
                 </asp:TemplateField>
             </Columns>
