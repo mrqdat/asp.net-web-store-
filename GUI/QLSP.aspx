@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Dashboard.aspx.cs" Inherits="GUI.Admin_Dashboard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="QLSP.aspx.cs" Inherits="GUI.QLSP" %>
 
 <!DOCTYPE html>
 
@@ -26,11 +26,11 @@
     <!-- End Layout styles -->
     <link rel="shortcut icon" href="../assets/images/favicon.png" />
     <script>
-        $(document).ready(function() {
-            $('#grvTaiKhoan').DataTable( {
-            select: true
-            } );
-        } );
+        $(document).ready(function () {
+            $('#grvSP').DataTable({
+                select: true
+            });
+        });
     </script>
 </head>
 <body>
@@ -212,18 +212,18 @@
                     </li>
                     <li class="nav-item nav-category">Main Menu</li>
                     <li class="nav-item">
-                        <asp:LinkButton ID="btn_qlkh" runat="server" CssClass="nav-link" href="Admin_Dashboard.aspx" data-toggle="collapse " aria-expanded="false">
+                        <asp:LinkButton ID="btn_qlkh" runat="server" CssClass="nav-link" href="Admin_Dashboard.aspx"  data-toggle="collapse " aria-expanded="false" OnClick="btn_qlkh_Click">
                             <i class="menu-icon typcn typcn-document-text"></i>
                             <span class="menu-title">Quản lí tài khoản</span>
                         </asp:LinkButton>
                     </li>
                     <li class="nav-item">
-                        <asp:LinkButton ID="btn_qlsp" runat="server" CssClass="nav-link" href="QLSP.aspx" data-toggle="collapse " aria-expanded="false">
+                        <asp:LinkButton ID="btn_qlsp" runat="server" CssClass="nav-link" href="QLSP.aspx"  data-toggle="collapse " aria-expanded="false" OnClick="btn_qlsp_Click">
                             <i class="menu-icon typcn typcn-document-text"></i>
                             <span class="menu-title">Quản lí sản phẩm</span>
                         </asp:LinkButton>
                     </li>
-                    
+                     
                 </ul>
             </nav>
             <%--  --%>
@@ -237,35 +237,32 @@
                   <div class="card-body">
                      
                      
-                      <p class="card-description"> Personal info </p>
+                      <p class="card-description"> Thông tin sản phẩm </p>
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Tên tài khoản</label>
+                            <label class="col-sm-3 col-form-label">Mã sản phẩm</label>
                             <div class="col-sm-9">
-                              <asp:TextBox ID="txb_tentk" runat="server" type="text" class="form-control" />
+                              <asp:TextBox ID="txb_masp" runat="server" type="text" Cssclass="form-control" placeholder="ID"/>
                             </div>
                           </div>
                         </div>
-                        <%--<div class="col-md-6">
+                        <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Last Name</label>
+                            <label class="col-sm-3 col-form-label">Tên sản phẩm</label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control" />
+                              <asp:TextBox ID="txb_tensp" runat="server" type="text" Cssclass="form-control" placeholder="Tên sản phẩm" />
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="row">--%>
-                        
-
-                      </div>
+                      
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Email</label>
+                            <label class="col-sm-3 col-form-label">Thông tin</label>
                             <div class="col-sm-9">
-                              <asp:TextBox ID="txb_mail" runat="server" CssClass="form-control" placeholder="Your Email" />
+                              <asp:TextBox ID="txb_thongtin" runat="server" CssClass="form-control" placeholder="Thông tin sản phẩm" />
                             </div>
                           </div>
                         </div>
@@ -273,9 +270,9 @@
                        
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Số điện thoại</label>
+                            <label class="col-sm-3 col-form-label">Giá tiền</label>
                             <div class="col-sm-9">
-                              <asp:TextBox ID="txb_sdt" runat="server"  CssClass="form-control" placeholder="Your phone" />
+                              <asp:TextBox ID="txb_giatien" runat="server"  CssClass="form-control" placeholder="Giá tiền" />
                             </div>
                           </div>
                         </div>
@@ -284,9 +281,9 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Địa chỉ</label>
+                            <label class="col-sm-3 col-form-label">Số lượng tồn kho</label>
                             <div class="col-sm-9">
-                              <asp:TextBox ID="txb_diachi" runat="server" CssClass="form-control" placeholder="Your address" />
+                              <asp:TextBox ID="txb_sltonkho" runat="server" CssClass="form-control" placeholder="Số lượng tồn kho" />
                             </div>
                           </div>
                         </div>
@@ -294,61 +291,55 @@
                        
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Họ tên</label>
+                            <label class="col-sm-3 col-form-label">Mã Loại Sản Phẩm</label>
                             <div class="col-sm-9">
-                              <asp:TextBox ID="txb_hoten" runat="server"  CssClass="form-control" placeholder="Fullname" />
+                              <asp:TextBox ID="txb_maloaisp" runat="server"  CssClass="form-control" placeholder="Mã loại sản phẩm" />
                             </div>
                           </div>
                         </div>
-                       </div>
-                       
-                      
-                     </div>
+                       </div>             
+                   </div>
                  
                 </div>
               </div>
-    
-    
-          <%--<div class="main-panel">
-          <div class="content-wrapper">
-            <div class="row">
-               
-                  </div>
-                </div>
-              </div>--%>
+   
          
                 <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                       <div class="row" style="margin-bottom:15px;">
-                          <h4 class="col-lg-6 card-title">Danh sách tài khoản</h4>
+                          <h4 class="col-lg-6 card-title">Danh sách sản phẩm</h4>
                           <input id="txb_search" class="  form-control" type="text" placeholder="tìm kiếm..." style="width: 200px; align-content: flex-start; padding-right: 10px; position: relative; left: 312px; top: 0px;" />
-                      </div>                   
-                                  
-                    <asp:GridView ID="grvTaiKhoan" runat="server" AutoGenerateColumns="False" OnRowCommand="grvDSTaiKhoan_RowCommand" CssClass="table table-hover table-striped" GridLines="None">
-                        <Columns>
-                            <asp:BoundField DataField="TenTaiKhoan" HeaderText="Tên tài khoản" />
-                            <asp:BoundField DataField="Email" HeaderText="Email" />
-                            <asp:BoundField DataField="SDT" HeaderText="SĐT" />
-                            <asp:BoundField DataField="DiaChi" HeaderText="Địa chỉ" />
-                            <asp:BoundField DataField="HoTen" HeaderText="Họ tên" />
-                            <asp:CheckBoxField DataField="LaAdmin" HeaderText="Là admin" />
-                            <%--<asp:BoundField DataField="AnhDaiDien" HeaderText="Ảnh đại diện" />--%>
-                            <asp:CheckBoxField DataField="TrangThai" HeaderText="Trạng thái" />
-                            <asp:TemplateField ShowHeader="False">
-                            <ItemTemplate>
-                                <asp:ImageButton ID="btnChon" runat="server"  CausesValidation="False"  Text="Chọn" />
-                                <asp:ImageButton ID="btnXoa" runat="server" ImageUrl="~/user/img/cart/Delete-icon.png" Width="20px" CausesValidation="False" CommandName="XoaTK" CommandArgument='<%# Eval("TenTaiKhoan") %>' Text="Xóa" OnClientClick="return confirm('Bạn có chắc chắn muốn xóa?');" />
-                            </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-                    </asp:GridView>
+                      </div>
+                    
+                     
+                      <asp:GridView ID="grv_sp" runat="server" AutoGenerateColumns="False" OnRowCommand="grv_sp_RowCommand" CssClass="table table-hover table-striped" GridLines="None">
+                            <Columns>
+                                <asp:BoundField DataField="MaSP" HeaderText="ID" />
+                                <asp:BoundField DataField="TenSP" HeaderText="Tên SP" />
+                                <asp:BoundField DataField="ThongTin" HeaderText="THông Tin" />
+                                <asp:BoundField DataField="GiaTien" HeaderText="Giá Tiền" />
+                                <asp:BoundField DataField="SoLuongTonKho" HeaderText="Số lượng tồn" />
+                                <asp:BoundField DataField="MaLoaiSP" HeaderText="Mã loại SP" />                                 
+                                <asp:BoundField DataField="TrangThai" HeaderText="Trạng Thái" />
+                                <asp:TemplateField HeaderText="tùy chọn">
+                    
+                                <ItemTemplate>
+                                    <asp:ImageButton ID="btnChon" runat="server" CausesValidation="False"  ImageUrl="user/img/cart/reset.png"  width="20px"  CommandName="Chonsp" CommandArgument='<%# Eval("TenSP") %>' Text="Chọn" />
+                                    <asp:ImageButton ID="btnXoa" runat="server" CausesValidation="False" ImageUrl="user/img/cart/Delete-icon.png" Width="20px" CommandName="Xoasp" CommandArgument='<%# Eval("TenSP") %>' Text="Xóa" OnClientClick="return confirm('Bạn có chắc chắn muốn xóa?');" />
+                                </ItemTemplate>
+                    
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                     
+                     
                          
                   </div>
                 </div>
               </div>
               </div>
-                
+               
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
@@ -383,3 +374,4 @@
     </form>
 </body>
 </html>
+

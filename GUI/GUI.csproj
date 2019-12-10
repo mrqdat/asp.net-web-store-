@@ -71,6 +71,7 @@
     <Content Include="DangKi.aspx" />
     <Content Include="DangNhap.aspx" />
     <Content Include="QLSanPham.aspx" />
+    <Content Include="QLSP.aspx" />
     <Content Include="QLTaiKhoan.aspx" />
     <Content Include="user\Cart.aspx" />
     <Content Include="user\Category.aspx" />
@@ -98,6 +99,8 @@
     <Content Include="user\img\cart\1.png" />
     <Content Include="user\img\cart\2.png" />
     <Content Include="user\img\cart\3.png" />
+    <Content Include="user\img\cart\Delete-icon.png" />
+    <Content Include="user\img\cart\reset.png" />
     <Content Include="user\img\favicon.ico" />
     <Content Include="user\img\icons\1.png" />
     <Content Include="user\img\icons\2.png" />
@@ -138,6 +141,7 @@
     <Content Include="user\js\map.js" />
     <Content Include="user\js\owl.carousel.min.js" />
     <Content Include="user\Product.aspx" />
+    <Content Include="user\searchResult.aspx" />
     <Content Include="Web.config" />
     <Content Include="user\index.aspx" />
   </ItemGroup>
@@ -163,7 +167,13 @@
     <Compile Include="DangNhap.aspx.designer.cs">
       <DependentUpon>DangNhap.aspx</DependentUpon>
     </Compile>
-    <Compile Include="httpcookie.cs" />
+    <Compile Include="QLSP.aspx.cs">
+      <DependentUpon>QLSP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLSP.aspx.designer.cs">
+      <DependentUpon>QLSP.aspx</DependentUpon>
+    </Compile>
     <Compile Include="user\Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -227,6 +237,13 @@
     </Compile>
     <Compile Include="user\Product.aspx.designer.cs">
       <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\searchResult.aspx.cs">
+      <DependentUpon>searchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\searchResult.aspx.designer.cs">
+      <DependentUpon>searchResult.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

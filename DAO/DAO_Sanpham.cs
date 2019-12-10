@@ -13,7 +13,7 @@ namespace DAO
     {
         public static List<DTO_Sanpham> LayDSTSanpham()
         {
-            string query = "SELECT * FROM SanPham";
+            string query = "SELECT * FROM SanPham where TrangThai =1";
             SqlParameter[] param = new SqlParameter[0];
             DataTable dtbSanpham = DataProvider.ExecuteSelectQuery(query, param);
             List<DTO_Sanpham> lstSanpham = new List<DTO_Sanpham>();
@@ -43,8 +43,8 @@ namespace DAO
 
         public static bool Themsp(DTO_Sanpham sp)
         {
-            string query = "INSERT INTO SanPham (MaSP, TenSP, GiaTien, SoLuongTonKho, MaLoaiSP, AnhMinhHoa, TrangThai) VALUES (@masp, @tensp, @giatien,@thongtin,@soluongton,@maloaisp,0,1)";
-            SqlParameter[] param = new SqlParameter[6];
+            string query = "INSERT INTO SanPham (MaSP, TenSP, GiaTien, ThongTin, SoLuongTonKho, MaLoaiSP, AnhMinhHoa, TrangThai) VALUES (@masp, @tensp, @giatien,@thongtin,@soluongton,@maloaisp,0,1)";
+            SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@masp", sp.Masp);
             param[1] = new SqlParameter("@tensp", sp.Tensp);
             param[2] = new SqlParameter("@giatien", sp.Giatien);
@@ -70,15 +70,16 @@ namespace DAO
 
         public static bool Suasp(DTO_Sanpham sp)
         {
-            string query = "UPDATE SanPham SET MaSP = @Masp, TenSP = @Tensp, GiaTien = @Giatien, SoLuongTonKho = @SoLuongTonKho, MaLoaiSP = @MaLoaisp, AnhMinhHoa = @AnhMinhHoa, TrangThai = @TrangThai ";
-            SqlParameter[] param = new SqlParameter[9];
+            string query = "UPDATE SanPham SET MaSP = @Masp, TenSP = @Tensp, GiaTien = @Giatien,ThongTin=@ThongTin, SoLuongTonKho = @SoLuongTonKho, MaLoaiSP = @MaLoaisp, AnhMinhHoa = @AnhMinhHoa, TrangThai = @TrangThai ";
+            SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@MaSP", sp.Masp);
             param[1] = new SqlParameter("@TenSP", sp.Tensp);
             param[2] = new SqlParameter("@GiaTien", sp.Giatien);
-            param[3] = new SqlParameter("@SoLuongTonKho", sp.Soluongtonkho);
-            param[4] = new SqlParameter("@MaLoaiSP", sp.Maloaisp);
-            param[5] = new SqlParameter("@AnhMinhHoa", sp.Anhminhhoa);
-            param[8] = new SqlParameter("@TrangThai", sp.TrangThai);
+            param[3] = new SqlParameter("@ThongTin", sp.Thongtin);
+            param[4] = new SqlParameter("@SoLuongTonKho", sp.Soluongtonkho);
+            param[5] = new SqlParameter("@MaLoaiSP", sp.Maloaisp);
+            param[6] = new SqlParameter("@AnhMinhHoa", sp.Anhminhhoa);
+            param[7] = new SqlParameter("@TrangThai", sp.TrangThai);
             return DataProvider.ExecuteUpdateQuery(query, param) == 1;
         }
 
@@ -102,6 +103,21 @@ namespace DAO
             sp.Anhminhhoa = dr["AnhMinhHoa"].ToString();
             sp.TrangThai = Convert.ToBoolean(dr["TrangThai"]);
             return sp;
+        }
+
+        public static List<DTO_Sanpham> TimkiemSP(string TenSP)
+        {
+            string query = "SELECT * FROM SanPham where TenSP like @TenSP";
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@TenSP", "%"+TenSP+"%");
+           
+            DataTable dtbSanpham = DataProvider.ExecuteSelectQuery(query, param);
+            List<DTO_Sanpham> lstSanpham = new List<DTO_Sanpham>();
+            foreach (DataRow dr in dtbSanpham.Rows)
+            {
+                lstSanpham.Add(ConvertToDTO(dr));
+            }
+            return lstSanpham;
         }
     }
 }

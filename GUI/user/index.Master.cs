@@ -53,5 +53,12 @@ namespace GUI
             
 
         }
+
+        protected void btn_search_Click(object sender, EventArgs e)
+        {
+            
+            Response.Redirect("searchResult.aspx?keyword=" + txb_search.Text);
+
+        }
     }
 }

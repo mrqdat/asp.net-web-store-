@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="index.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="GUI.user.Contact" %>
 
 <asp:Content ID="contact_content1" ContentPlaceHolderID="head" runat="server">
-    <title>Divisima | Product</title>
+    <title>Divisima | Contact</title>
     <meta charset="UTF-8">
     <meta name="description" content=" Divisima | eCommerce Template">
     <meta name="keywords" content="divisima, eCommerce, creative, html">

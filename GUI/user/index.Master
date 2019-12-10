@@ -55,11 +55,11 @@
                                 <img src="img/logo.png" alt="">
                             </a>
                         </div>
-                        <div class="col-xl-6 col-lg-5 header-search-form">
-
-                            <input type="text" placeholder="Search on divisima ....">
-                            <button><i class="flaticon-search"></i></button>
-
+                        <div class="col-xl-6 col-lg-5"  >
+                           <div class="header-search-form"> 
+                                <asp:TextBox ID="txb_search" runat="server" type="text" placeholder="Search on divisima ...."/>
+                                <button  runat="server" OnServerClick="btn_search_Click"><i class="flaticon-search"></i></button>
+                            </div>
                         </div>
                        
                         <div class="col-xl-4 col-lg-5">          

@@ -7,37 +7,29 @@ using System.Web.UI.WebControls;
 using BUS;
 using DTO;
 
-namespace GUI
+namespace GUI.user
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class searchResult : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var keyword = Request.QueryString["keyword"];
             if (!Page.IsPostBack)
             {
-                dtl_sanpham.DataSource = BUS_Sanpham.LayDSsp();
+                DTO_Sanpham sp = new DTO_Sanpham();
+                
+                dtl_sanpham.DataSource = BUS_Sanpham.timkiemSP(keyword);
                 dtl_sanpham.DataBind();
-
-
-                rpt_slider.DataSource = BUS_Sanpham.LayDSsp();
-                rpt_slider.DataBind();
-                //Response.Write("xin chao" + Session["username"]);
             }
-
-            //protected void ddlLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)
-            //{
-            //    string maLoaiSP = ddlLoaiSanPham.SelectedValue;
-            //    rptSanPham.DataSource = SanPhamBUS.LayDSSanPham(maLoaiSP);
-            //    rptSanPham.DataBind();
-            ////}
         }
+
 
         protected void rpt_slider_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "ThemGH")
             {
                 HttpCookie cookie = Request.Cookies["tenTK"];
-                if(cookie != null)
+                if (cookie != null)
                 {
                     string tenTK = cookie.Value;
                     DTO_giohang gh = new DTO_giohang();

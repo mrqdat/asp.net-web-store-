@@ -68,5 +68,10 @@ namespace BUS
                 return DAO_Sanpham.Xoasp(tensp);
             }
         }
+
+        public static List<DTO_Sanpham> timkiemSP(string tensp)
+        {
+            return DAO_Sanpham.TimkiemSP(tensp);
+        }
     }
 }

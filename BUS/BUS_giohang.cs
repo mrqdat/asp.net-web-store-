@@ -48,5 +48,10 @@ namespace BUS
 
             return dtb_giohang.Rows.Count;
         }
+
+        public static bool xoaSP(DTO_giohang gh)
+        {
+            return DAO_giohang.xoaSp(gh);
+        }
     }
 }

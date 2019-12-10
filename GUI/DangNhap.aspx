@@ -87,14 +87,12 @@
                     </div>
                   </div>
                   <asp:RequiredFieldValidator ID="rvf_password" runat="server" ControlToValidate="txb_pass" ErrorMessage="Bạn chưa nhập mat khau"></asp:RequiredFieldValidator>
-                    <%-- 
-                        
-                        --%>
+                
                   <div class="form-group">
                     <asp:Button runat="server" ID="btn_login1" Text="Login" class="btn btn-primary submit-btn btn-block"  onclick="btn_login_Click"/>
                   </div>
                   <div class="form-group d-flex justify-content-between">
-                    <div class="form-check form-check-flat mt-0">
+                    <div class="form-check form-check-flat mt-0"
                       <label class="form-check-label">
                         <asp:TextBox id="chk_keep" runat="server" type="checkbox" class="form-check-input"/> Keep me signed in </label>
                     </div>

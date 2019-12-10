@@ -48,6 +48,16 @@ namespace DAO
             return DataProvider.ExecuteUpdateQuery(query, param) == 1;
         }
 
+        public static bool xoaSp(DTO_giohang gh)
+        {
+            string query = "delete from GioHang where TenTaiKhoan = @TenTaiKhoan AND MaSP = @MaSP";
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@TenTaiKhoan", gh.Tentaikhoan);
+            param[1] = new SqlParameter("@MaSP", gh.Masp);
+          
+            return DataProvider.ExecuteDeleteQuery(query, param) == 1;
+        }
+
         public static DTO_giohang ConvertToDTO(DataRow dr)
         {
             DTO_giohang gh = new DTO_giohang();

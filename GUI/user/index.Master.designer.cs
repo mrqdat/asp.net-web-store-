@@ -31,6 +31,15 @@ namespace GUI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// txb_search control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txb_search;
+        
+        /// <summary>
         /// lb_amount control.
         /// </summary>
         /// <remarks>

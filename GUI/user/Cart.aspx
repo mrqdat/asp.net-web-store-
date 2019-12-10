@@ -49,7 +49,7 @@
         <div class="container">
             <h4>Your cart</h4>
             <div class="site-pagination">
-                <a href="#">Home</a> /
+                <a href="index.aspx">Home</a> /
 				<a href="#">Your cart</a>
             </div>
         </div>
@@ -59,15 +59,15 @@
 
     <!-- cart section end -->
     <section class="cart-section spad" >
-        <div class="container">
+        <div class="container" ">
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="cart-table">
+                <div class="col-lg-9">
+                    <div class="cart-table" style="padding:25px 15px 0;">
                         <h3>Your Cart</h3>
                            
                         <div class="cart-table-warp">
                             <div class="container">
-                                <asp:GridView ID="grvGioHang" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="False" GridLines="None">
+                                <asp:GridView ID="grvGioHang" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="False" GridLines="None" OnRowDeleting="grvGioHang_RowDeleting" >
                                     <Columns  >
                                         <asp:TemplateField>
                                             <ItemTemplate>
@@ -87,127 +87,33 @@
                                         </asp:TemplateField>
                                         <%--<asp:BoundField DataField="SoLuong" HeaderText="Quantity" />--%>
                                         <asp:BoundField DataField="ThanhTien" HeaderText="Total" />
+                                        <asp:CommandField ShowDeleteButton="true" DeleteImageUrl="~/user/img/cart/reset.png"   ButtonType="Image" ControlStyle-Width="15px"/>
+                                        <asp:CommandField ShowDeleteButton="true" DeleteImageUrl="~/user/img/cart/Delete-icon.png"   ButtonType="Image" ControlStyle-Width="15px"/>
+                                        <%--<asp:TemplateField>
+                                            <ItemTemplate>
+                                                 
+                                                    <div class="">
+                                                        <asp:ImageButton runat="server" ID="btn_update" ImageUrl="~/user/img/cart/reset.png" Width="20" CommandA=""/>
+                                                    </div>
+                                                    <div class="">
+                                                        <asp:ImageButton runat="server" ID="btn_delete" ImageUrl="~/user/img/cart/Delete-icon.png"  Width="20" OnClick="btn_delete_Click"/>
+                                                    </div>
+                                                 
+                                            </ItemTemplate>
+                                        </asp:TemplateField>--%>
                                     </Columns>
+                                    
                                 </asp:GridView>
-                                <%--Tổng tiền: <asp:Label ID="lblTongTien" runat="server" Text="0"></asp:Label> VNĐ--%>
+                              
                             </div>
-                            <%--<table>
-                                <thead>
-                                    <tr>
-                                        <th class="product-th">Product</th>
-                                        <th class="quy-th">Quantity</th>                                        
-                                        <th class="total-th">Price</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <asp:Repeater id="rpt_slider" runat="server"  onItemCommand="rpt_slider_ItemCommand">
-                                         <ItemTemplate>
-                                             <tr>
-                                                <td class="product-col">
-                                                    <asp:Image ID="anhSP" runat="server" ImageUrl='<%# "img/cart/" + Eval("AnhMinhHoa") %>'/>
-                                                    <div class="pc-title">
-                                                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> <br />
-                                                         <asp:Label ID="Label1" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
-                                                    </div>
-                                                </td>
-                                                <td class="quy-col">
-                                                    <div class="quantity">
-                                                        <div class="pro-qty">
-                                                            <asp:Textbox Id="qty_sp" runat="server" type="text" value="1"/>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                      
-                                                <td class="total-col">
-                                                    <asp:Label ID="lb_price" runat="server" Text="1335"></asp:Label>
-                                                </td>
-                                            </tr>
-                                            <div class="product-item">
-                                                <div class="pi-pic">
-                                                    <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' />   
-                                                        <div class="pi-links">
-<%--                                        <%--<i class=""></i><asp:LinkButton ID="btnThemGH" runat="server" Cssclass="add-card  flaticon-bag"  Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />
-                                                            <asp:LinkButton id="btn_addtocart" runat="server" Cssclass="add-card" CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
-                                                            <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                                                        </div>
-                                                </div>
-                                                <div class="pi-text">
-                                                    <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> <br />
-                                                    <asp:Label ID="lblTenSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
-                                                </div>
-                                            </div>
-                                        </ItemTemplate>            
-                                    </asp:Repeater>
-                                    <%--<tr>
-                                        <td class="product-col">
-                                            <img src="img/cart/1.png" alt="">
-                                            <div class="pc-title">
-                                                <h4>Canon EOS RP </h4>
-                                                <p>$1335,00</p>
-                                            </div>
-                                        </td>
-                                        <td class="quy-col">
-                                            <div class="quantity">
-                                                <div class="pro-qty">
-                                                    <asp:Textbox Id="qty_sp" runat="server" type="text" value="1"/>
-                                                </div>
-                                            </div>
-                                        </td>
-                                      
-                                        <td class="total-col">
-                                            <asp:Label ID="lb_price" runat="server" Text="1335"></asp:Label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product-col">
-                                            <img src="img/cart/2.png" alt="">
-                                            <div class="pc-title">
-                                                <h4>Canon EOS R</h4>
-                                                <p>$1699,00</p>
-                                            </div>
-                                        </td>
-                                        <td class="quy-col">
-                                            <div class="quantity">
-                                                <div class="pro-qty">
-                                                    <asp:Textbox Id="qty_sp1" runat="server" type="text" value="1"/>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        
-                                        <td class="total-col">
-                                            <asp:Label ID="lb_price1" runat="server" Text="1699"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product-col">
-                                            <img src="img/cart/3.png" alt="">
-                                            <div class="pc-title">
-                                                <h4>Canon EOS 3000D </h4>
-                                                <p>$399,00</p>
-                                            </div>
-                                        </td>
-                                        <td class="quy-col">
-                                            <div class="quantity">
-                                                <div class="pro-qty">
-                                                    <asp:Textbox Id="qty_sp2" runat="server" type="text" value="1"/>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        
-                                        <td class="total-col">
-                                            <asp:Label ID="lb_price2" runat="server" Text="399"/>
-                                        </td>
-                                    </tr> 
-                                </tbody>
-
-                            </table>--%>
+                            
                         </div>
                         <div class="total-cost"  ">
                             <h6>Total <asp:Label ID="lblTongTien" runat="server" Text="0"></asp:Label></h6>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 card-right">
+                <div class="col-lg-3 card-right">
                     <div class="promo-code-form">
                         <input type="text" placeholder="Enter promo code">
                         <button>Submit</button>
@@ -222,73 +128,34 @@
     <!-- cart section end -->
 
     <!-- Related product section -->
-    <section class="related-product-section">
+    <section class="top-letest-product-section">
         <div class="container">
-            <div class="section-title text-uppercase">
-                <h2>Continue Shopping</h2>
+            <div class="section-title">
+                <h2>LATEST PRODUCTS</h2>
             </div>
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <div class="tag-new">New</div>
-                            <img src="./img/product/2.png" alt="">
-                            <div class="pi-links">
-                                <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                            </div>
+            <div class="product-slider owl-carousel">
+                 <asp:Repeater id="rpt_slider" runat="server"  onItemCommand="rpt_slider_ItemCommand">
+                    <ItemTemplate>
+                         <div class="product-item">
+                             
+                                <div class="pi-pic">
+                                    <asp:HyperLink id="hpl_sp" runat="server">
+                                        <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' /></asp:HyperLink>   
+                                    <div class="pi-links">
+<%--                                        <%--<i class=""></i><asp:LinkButton ID="btnThemGH" runat="server" Cssclass="add-card  flaticon-bag"  Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />--%>
+                                        <asp:LinkButton id="btn_addtocart" runat="server" Cssclass="add-card" CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
+                                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                                    </div>
+                                </div>
+                           
+                                <div class="pi-text">
+                                    <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> <br />
+                                    <asp:Label ID="lblTenSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
+                                </div>
                         </div>
-                        <div class="pi-text">
-                            <h6>$1699,00</h6>
-                            <p>Canon EOS R</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="./img/product/5.png" alt="">
-                            <div class="pi-links">
-                                <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pi-text">
-                            <h6>$1699,00</h6>
-                            <p>Canon EOS 90D  </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="./img/product/9.png" alt="">
-                            <div class="pi-links">
-                                <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pi-text">
-                            <h6>$1099,00</h6>
-                            <p>Canon EOS 6D Mark II </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="./img/product/1.png" alt="">
-                            <div class="pi-links">
-                                <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pi-text">
-                            <h6>$1335,00</h6>
-                            <p>Canon EOS RP </p>
-                        </div>
-                    </div>
-                </div>
+                    </ItemTemplate>            
+                </asp:Repeater>
+                
             </div>
         </div>
     </section>

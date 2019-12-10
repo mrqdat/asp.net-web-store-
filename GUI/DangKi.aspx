@@ -74,10 +74,11 @@
               <h2 class="text-center mb-4">Register</h2>
               <div class="auto-form-wrapper">
                 <form action="#" runat="server">
+                    <asp:RequiredFieldValidator ID="rfv_name" runat="server" controlToValidate="username" ErrorMessage="Tài khoản không được để trống!" ForeColor="Red" Display="Dynamic" Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
                   <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox runat="server" ID="username" type="text" class="form-control" placeholder="Username"/>
-                        <asp:RequiredFieldValidator ID="rfv_name" runat="server" controlToValidate="username" ErrorMessage="tai khoan khng duoc de trong" Display="Dynamic"></asp:RequiredFieldValidator>
+                        
                       <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -85,11 +86,12 @@
                       </div>
                     </div>
                   </div>
+                    <asp:RequiredFieldValidator ID="rfv_pass" runat="server"   ControlToValidate="pass" ErrorMessage="Mật khẩu không được để trống !" ForeColor="Red" Display="Dynamic" Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="rev_pass" runat="server" ControlToValidate="pass" ErrorMessage="MẬt khẩu phải từ 6 - 15 kí tự !" ForeColor="Red" ValidationExpression="\w{6,15}" Display="Dynamic"  Font-Size="10px" Height="15px"></asp:RegularExpressionValidator>
                   <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox ID="pass" runat="server" type="password" class="form-control" placeholder="Password"/>
-                        <asp:RequiredFieldValidator ID="rfv_pass" runat="server" ControlToValidate="pass" ErrorMessage="mat khau khong duoc de trong" Display="Dynamic"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="rev_pass" runat="server" ControlToValidate="pass" ErrorMessage="sai dinh dang" ValidationExpression="\w{6,15}" Display="Dynamic"></asp:RegularExpressionValidator>
+                        
                       <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -97,11 +99,12 @@
                       </div>
                     </div>
                   </div>
+                    <asp:RequiredFieldValidator ID="rfv_conpass" runat="server" ControlToValidate="confirm_pass" ErrorMessage="Bạn phải nhập mật khẩu trước !" ForeColor="Red" Display="Dynamic"   Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
+                      <asp:CompareValidator ID="cv_conpass" runat="server" ControlToCompare="pass" ControlToValidate="confirm_pass" ErrorMessage="Mật khẩu không trùng khớp!" ForeColor="Red"   Font-Size="10px" Height="15px"></asp:CompareValidator>
                   <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox ID="confirm_pass" runat="server" type="password" class="form-control" placeholder="Confirm Password"/>
-                      <asp:RequiredFieldValidator ID="rfv_conpass" runat="server" ControlToValidate="confirm_pass" ErrorMessage="phai nhap mat khau truoc" Display="Dynamic"></asp:RequiredFieldValidator>
-                      <asp:CompareValidator ID="cv_conpass" runat="server" ControlToCompare="pass" ControlToValidate="confirm_pass" ErrorMessage="mat khau khong trung khop"></asp:CompareValidator>
+                      
                         <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -109,11 +112,11 @@
                       </div>
                     </div>
                   </div>
+                    <asp:RequiredFieldValidator ID="rfv_mail" runat="server" ControlToValidate="txb_Email" ValidateExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ErrorMessage="Email không hợp lệ!" ForeColor="Red" Display="Dynamic" Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
                   <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox ID="txb_Email" runat="server" type="text" class="form-control" placeholder="Email"/>
-                      <asp:RequiredFieldValidator ID="rfv_mail" runat="server" ControlToValidate="txb_Email" ErrorMessage="Email khong duoc de trong" Display="Dynamic"></asp:RequiredFieldValidator>
-
+                        
                       <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -124,7 +127,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox ID="txb_SDT" runat="server" type="text" class="form-control" placeholder="Số điện thoại"/>
-<%--                        <asp:RegularExpressionValidator ID="rev_sdt" runat="server" ControlToValidate="txb_SDT" ErrorMessage="SDT phải có 10 chữ số" ValidateExpression="\d{10}" Display="Static"></asp:RegularExpressionValidator>--%>
+                           <%--<asp:RegularExpressionValidator ID="rev_sdt" runat="server" ControlToValidate="txb_SDT"  ValidateExpression="0\d{9}" ErrorMessage="SDT phải có 10 chữ số" Display="Dynamic" Font-Size="Smaller"></asp:RegularExpressionValidator>--%>
                       <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>

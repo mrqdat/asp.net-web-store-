@@ -10,150 +10,114 @@
 namespace GUI {
     
     
-    public partial class DangKi {
+    public partial class QLSP {
         
         /// <summary>
-        /// rfv_name control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_name;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// username control.
+        /// btn_search control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox username;
+        protected global::System.Web.UI.WebControls.TextBox btn_search;
         
         /// <summary>
-        /// rfv_pass control.
+        /// btn_logout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_pass;
+        protected global::System.Web.UI.WebControls.LinkButton btn_logout;
         
         /// <summary>
-        /// rev_pass control.
+        /// btn_qlkh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_pass;
+        protected global::System.Web.UI.WebControls.LinkButton btn_qlkh;
         
         /// <summary>
-        /// pass control.
+        /// btn_qlsp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pass;
+        protected global::System.Web.UI.WebControls.LinkButton btn_qlsp;
         
         /// <summary>
-        /// rfv_conpass control.
+        /// txb_masp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_conpass;
+        protected global::System.Web.UI.WebControls.TextBox txb_masp;
         
         /// <summary>
-        /// cv_conpass control.
+        /// txb_tensp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cv_conpass;
+        protected global::System.Web.UI.WebControls.TextBox txb_tensp;
         
         /// <summary>
-        /// confirm_pass control.
+        /// txb_thongtin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox confirm_pass;
+        protected global::System.Web.UI.WebControls.TextBox txb_thongtin;
         
         /// <summary>
-        /// rfv_mail control.
+        /// txb_giatien control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_mail;
+        protected global::System.Web.UI.WebControls.TextBox txb_giatien;
         
         /// <summary>
-        /// txb_Email control.
+        /// txb_sltonkho control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_Email;
+        protected global::System.Web.UI.WebControls.TextBox txb_sltonkho;
         
         /// <summary>
-        /// txb_SDT control.
+        /// txb_maloaisp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_SDT;
+        protected global::System.Web.UI.WebControls.TextBox txb_maloaisp;
         
         /// <summary>
-        /// txb_DiaChi control.
+        /// grv_sp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_DiaChi;
-        
-        /// <summary>
-        /// txb_HoTen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_HoTen;
-        
-        /// <summary>
-        /// chk control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox chk;
-        
-        /// <summary>
-        /// btn_dangki control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btn_dangki;
-        
-        /// <summary>
-        /// btn_backtologin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink btn_backtologin;
+        protected global::System.Web.UI.WebControls.GridView grv_sp;
     }
 }
