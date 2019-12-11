@@ -50,7 +50,7 @@ namespace DAO
 
         public static bool xoaSp(DTO_giohang gh)
         {
-            string query = "delete from GioHang where TenTaiKhoan = @TenTaiKhoan AND MaSP = @MaSP";
+            string query = "UPDATE GioHang SET TrangThai = 0 WHERE TenTaiKhoan = @TenTaiKhoan AND MaSP = @MaSP";
             SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@TenTaiKhoan", gh.Tentaikhoan);
             param[1] = new SqlParameter("@MaSP", gh.Masp);

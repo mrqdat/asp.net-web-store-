@@ -31,13 +31,76 @@ namespace GUI.user {
         protected global::System.Web.UI.WebControls.Label lblTongTien;
         
         /// <summary>
-        /// btnThanhToan control.
+        /// btn_thanhtoan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnThanhToan;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btn_thanhtoan;
+        
+        /// <summary>
+        /// lb_mahd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_mahd;
+        
+        /// <summary>
+        /// lb_tenTK control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_tenTK;
+        
+        /// <summary>
+        /// lb_ngaymua control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_ngaymua;
+        
+        /// <summary>
+        /// lb_diachi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_diachi;
+        
+        /// <summary>
+        /// lb_sdt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_sdt;
+        
+        /// <summary>
+        /// lb_tongtien control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_tongtien;
+        
+        /// <summary>
+        /// btn_ttmuahang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btn_ttmuahang;
         
         /// <summary>
         /// rpt_slider control.

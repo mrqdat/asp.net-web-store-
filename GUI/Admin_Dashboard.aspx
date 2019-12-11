@@ -7,7 +7,7 @@
      <!-- Required meta tags -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>Star Admin Premium Bootstrap Admin Dashboard Template</title>
+    <title>Divisima | Admin Dashboard</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css"/>
     <link rel="stylesheet" href="../assets/vendors/iconfonts/ionicons/css/ionicons.css"/>
@@ -83,9 +83,7 @@
                     </li>
                 </ul>
                  
-                    <div runat="server" class="form-group ml-auto search-form d-none d-md-block" action="#" >
-                            <asp:Textbox ID="btn_search" runat="server" type="search" class="form-control" placeholder="Search Here"/>
-                    </div>
+                    
                  
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
@@ -172,10 +170,10 @@
                             <img class="img-xs rounded-circle" src="../assets/images/faces/face8.jpg" alt="Profile image"/>
                         </a>
                         <div  class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-                            <div class="dropdown-header text-center">
-                                <img class="img-md rounded-circle" src="../assets/images/faces/face8.jpg" alt="Profile image"/>
-                                <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
-                                <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
+                            <div class="dropdown-header text-center" >
+                                <img class="img-md rounded-circle" src="../assets/images/faces/face8.jpg" alt="Profile image" /><br/><br/>
+                                <asp:Label ID="lb_username" runat="server" class="mb-1 mt-3 font-weight-semibold"  ></asp:Label><br/><br/>
+                                <asp:label ID="lb_mail" runat="server" class="font-weight-light text-muted mb-0" ></asp:label>
                             </div>
                             
                                 <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>

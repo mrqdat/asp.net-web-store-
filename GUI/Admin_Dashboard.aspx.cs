@@ -16,12 +16,33 @@ namespace GUI
             if (!Page.IsPostBack)
             {
                 LoadDSTaiKhoan();
+
+                HttpCookie cookie = Request.Cookies["tenTK"];
+                if(cookie == null)
+                {
+                    Response.Redirect("DangNhap.aspx");
+                }
+                else
+                {
+                    string tenTK = cookie.Value;
+
+                    TaiKhoanDTO tk = TaiKhoanBUS.LayThongTinTaiKhoan(tenTK);
+                    lb_username.Text = tk.HoTen;
+                    lb_mail.Text = tk.Email;
+                }
+                
             }
         }
 
         protected void btn_logout_Click(object sender, EventArgs e)
         {
-            Response.Redirect("DangNhap.aspx");
+            HttpCookie cookie = Request.Cookies["tenTK"];
+
+
+            cookie.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(cookie);
+            Response.Redirect(Request.RawUrl);
+            //Response.Redirect("DangNhap.aspx");
         }
 
         protected void btn_qlsp_Click(object sender, EventArgs e)
@@ -39,6 +60,8 @@ namespace GUI
             grvTaiKhoan.DataSource = TaiKhoanBUS.LayDSTaiKhoan();
             grvTaiKhoan.DataBind();
         }
+
+
         protected void grvDSTaiKhoan_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "ChonTK")

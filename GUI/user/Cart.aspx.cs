@@ -40,52 +40,77 @@ namespace GUI.user
             }
 
         }
-        protected void btnThanhToan_Click(object sender, EventArgs e)
-        {
-            //string tenTK = Session["username"].ToString();
+
+        protected void btn_thanhtoan_Click(object sender, EventArgs e) {
+
             HttpCookie cookie = Request.Cookies["tenTK"];
-            if (cookie != null)
+            if(cookie != null)
             {
-                string tenTK = cookie.Value;              
+                string tenTK = cookie.Value;
                 DTO_hoadon hd = new DTO_hoadon();
-                hd.Tentaikhoan = tenTK;
-                hd.Ngaymua = DateTime.Now;
-                hd.Diachi = "Tp.HCM";
-                hd.Sdt = "0905939947";
-                hd.Tongtien = BUS_giohang.tinhtien(tenTK);
-                hd.Mahd = BUS_hoadon.themhoadon(hd);
+                TaiKhoanDTO tk = TaiKhoanBUS.LayThongTinTaiKhoan(tenTK);
+                //hd.Tentaikhoan = tk.TenTaiKhoan;
+                //hd.Diachi = tk.DiaChi;
+                //hd.Ngaymua = DateTime.Now;
+                //hd.Tongtien = Convert.ToInt32(lblTongTien.Text);
+                //hd.Sdt = tk.SDT;
 
-                DataTable dtbKetQua = BUS_giohang.loadgiohang(tenTK);
-                foreach (DataRow dr in dtbKetQua.Rows)
-                {
-                    DTO_cthoadon cthd = new DTO_cthoadon();
-                    cthd.Mahd = hd.Mahd;
-                    cthd.Masp = dr["MaSP"].ToString();
-                    cthd.Soluong = Convert.ToInt32(dr["SoLuong"]);
-                    cthd.Dongia = Convert.ToInt32(dr["GiaTien"]);
-                    BUS_cthoadon.themcthd(cthd);
-                }
+
+                lb_mahd.Text = "###";
+                lb_tongtien.Text = lblTongTien.Text;
+                lb_tenTK.Text = tk.HoTen;                
+                lb_sdt.Text = tk.SDT;
+                lb_diachi.Text = tk.DiaChi;
+                lb_ngaymua.Text = DateTime.Now.ToString();
+
             }
-            //Response.Redirect("");
         }
+        //protected void btnThanhToan_Click(object sender, EventArgs e)
+        //{
+        //    //string tenTK = Session["username"].ToString();
+        //    HttpCookie cookie = Request.Cookies["tenTK"];
+        //    if (cookie != null)
+        //    {
+        //        string tenTK = cookie.Value;              
+        //        DTO_hoadon hd = new DTO_hoadon();
+        //        hd.Tentaikhoan = tenTK;
+        //        hd.Ngaymua = DateTime.Now;
+        //        hd.Diachi = "Tp.HCM";
+        //        hd.Sdt = "0905939947";
+        //        hd.Tongtien = BUS_giohang.tinhtien(tenTK);
+        //        hd.Mahd = BUS_hoadon.themhoadon(hd);
 
-        protected void btn_update_Click(object sender, ImageClickEventArgs e)
+        //        DataTable dtbKetQua = BUS_giohang.loadgiohang(tenTK);
+        //        foreach (DataRow dr in dtbKetQua.Rows)
+        //        {
+        //            DTO_cthoadon cthd = new DTO_cthoadon();
+        //            cthd.Mahd = hd.Mahd;
+        //            cthd.Masp = dr["MaSP"].ToString();
+        //            cthd.Soluong = Convert.ToInt32(dr["SoLuong"]);
+        //            cthd.Dongia = Convert.ToInt32(dr["GiaTien"]);
+        //            BUS_cthoadon.themcthd(cthd);
+        //        }
+        //    }
+        //    //Response.Redirect("");
+        //}
+
+
+
+        protected void btn_ttmuahang_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("index.aspx");
         }
         protected void btn_delete_Click(object sender, ImageClickEventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
-                HttpCookie cookie = Request.Cookies["tenTK"];
-                if (cookie != null)
-                {
-                    DTO_giohang gh = new DTO_giohang();
-                    BUS_giohang.xoaSP(gh);
-                    Response.Redirect(Request.RawUrl);
-                }
-            }
+           
             
+            HttpCookie cookie = Request.Cookies["tenTK"];
+            if (cookie != null)
+            {
+                DTO_giohang gh = new DTO_giohang();
+                BUS_giohang.xoaSP(gh);
+                Response.Redirect(Request.RawUrl);
+            }
             
         }
 
