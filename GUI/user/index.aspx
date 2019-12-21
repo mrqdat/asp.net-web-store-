@@ -154,7 +154,7 @@
                              
                                 <div class="pi-pic">
                                     <asp:HyperLink id="hpl_sp" runat="server">
-                                        <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' /></asp:HyperLink>   
+                                        <asp:ImageButton  ID="imgAnhMinhHoa" runat="server" CommandName="xemSP" CommandArgument='<%# Eval("MaSP") %>' ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>'   Width="250px"  OnClick="imgAnhMinhHoa_Click"/></asp:HyperLink>   
                                     <div class="pi-links">
 <%--                                        <%--<i class=""></i><asp:LinkButton ID="btnThemGH" runat="server" Cssclass="add-card  flaticon-bag"  Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />--%>
                                         <asp:LinkButton id="btn_addtocart" runat="server" Cssclass="add-card" CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
@@ -164,77 +164,13 @@
                            
                                 <div class="pi-text">
                                     <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> <br />
-                                    <asp:Label ID="lblTenSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
+                                    <asp:Label ID="lblTenSP" CommandName="xemSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
                                 </div>
                         </div>
                     </ItemTemplate>            
                 </asp:Repeater>
-                <%--<div class="product-item">
-                    <div class="pi-pic">
-                        <asp:Image runat="server" ID="product1" src="./img/product/1.png" alt=""/>
-                        <div class="pi-links">
-                            <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                            <a href=" #" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                        </div>
-                    </div>
-                    <div class="pi-text">
-                        <h6>$1335,00</h6>
-                        <p>Canon EOS RP </p>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="pi-pic">
-                        <div class="tag-new">New</div>
-                            <asp:Image runat="server" ID="product2" src="./img/product/2.png" alt=""/>
-                        <div class="pi-links">
-                            <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                            <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                        </div>
-                    </div>
-                    <div class="pi-text">
-                        <h6>$1699,00</h6>
-                        <p>Canon EOS R</p>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="pi-pic">
-                        <asp:Image runat="server" ID="product3" src="./img/product/3.png" alt=""/>
-                        <div class="pi-links">
-                            <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                            <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                        </div>
-                    </div>
-                    <div class="pi-text">
-                        <h6>$399,00</h6>
-                        <p>Canon EOS 3000D </p>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="pi-pic">
-                        <asp:Image runat="server" ID="product4" src="./img/product/4.png" alt=""/>
-                        <div class="pi-links">
-                            <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                            <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                        </div>
-                    </div>
-                    <div class="pi-text">
-                        <h6>$999,00</h6>
-                        <p>Canon EOS M6 </p>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="pi-pic">
-                        <asp:Image runat="server" ID="product6" src="./img/product/6.png" alt=""/>
-                        <div class="pi-links">
-                            <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                            <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                        </div>
-                    </div>
-                    <div class="pi-text">
-                        <h6>$799,00</h6>
-                        <p>Canon EOS M5 </p>
-                    </div>
-                </div>--%>
+                
+                
             </div>
         </div>
     </section>
@@ -246,13 +182,13 @@
             </div>
             <ul class="product-filter-menu">
                 
-                <li><a href="#">Canon</a></li>
-                <li><a href="#">Nikon</a></li>
-                <li><a href="#">Nikkor</a></li>
-                <li><a href="#">85mm 1,8 USM</a></li>
-                <li><a href="#">XT-30</a></li>
-                <li><a href="#">Sony a7iv</a></li>
-                <li><a href="#">Ziess Batis</a></li>
+                <li><asp:LinkButton id="lb_topword" runat="server" type="button"  Text="Canon" OnClick="lb_topword_Click">Canon</asp:LinkButton></li>
+                <li><asp:LinkButton id="lb_topword1" runat="server" type="button"  Text="Nikon" OnClick="lb_topword1_Click">Nikon</asp:LinkButton></li>
+                <li> <asp:LinkButton id="lb_topword2" runat="server" type="button"  Text="Nikkor" OnClick="lb_topword2_Click">Nikkor</asp:LinkButton></li>
+                <li> <asp:LinkButton id="lb_topword3" runat="server" type="button"  Text="85mm 1,8 USM" OnClick="lb_topword3_Click">85mm 1,8 USM</asp:LinkButton></li>
+                <li> <asp:LinkButton id="lb_topword4" runat="server" type="button"  Text="XT-30" OnClick="lb_topword4_Click">XT-30</asp:LinkButton></li>
+                <li> <asp:LinkButton id="lb_topword5" runat="server" type="button"  Text="Sony a7iv" OnClick="lb_topword5_Click">Sony a7iv</asp:LinkButton></li>
+                <li> <asp:LinkButton id="lb_topword6" runat="server" type="button"  Text="Zeiss Batis" OnClick="lb_topword6_Click">Zeiss Batis</asp:LinkButton></li>
             </ul>
             <div class="row">
 
@@ -261,7 +197,7 @@
                         <div class="col-lg-3 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' />   
+                                    <asp:ImageButton ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>'  CommandName="xemSP" Width="260px"/>   
                                     <div class="pi-links">
 <%--                                        <%--<i class=""></i><asp:LinkButton ID="btnThemGH" runat="server" Cssclass="add-card  flaticon-bag"  Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />--%>
                                         <asp:LinkButton id="btn_addtocart" runat="server"  Cssclass="add-card"  CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
@@ -270,143 +206,16 @@
                                 </div>
                                 <div class="pi-text">
                                     <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> <br />
-                                    <asp:Label ID="lblTenSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
+                                    <asp:Label ID="lblTenSP"  runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
                                 </div>
                             </div>
                         </div>
                     </ItemTemplate>            
                 </asp:Repeater>
              </div>
-              <%-- 
-                  
-                            
-                  
-                  
-                  --%>
-               <%-- <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="./img/product/5.png" alt="">
-                            <div class="pi-links">
-                                <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pi-text">
-                            <h6>$1499,00</h6> 
-                            <p>Canon EOS 90D </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <div class="tag-sale">ON SALE</div>
-                            <img src="./img/product/6.png" alt="">
-                            <div class="pi-links">
-                                <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pi-text">
-                            <h6>$599,00</h6>
-                            <p>Canon EOS M50</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="./img/product/7.png" alt="">
-                            <div class="pi-links">
-                                <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pi-text">
-                            <h6>$749,00</h6>
-                            <p>Canon EOS M50 + kit 15-45mm </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="./img/product/8.png" alt="">
-                            <div class="pi-links">
-                                <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pi-text">
-                            <h6>$899,00</h6>
-                            <p>Canon EOS M50 + 55-200mm zoom lens </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="./img/product/9.png" alt="">
-                            <div class="pi-links">
-                                <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pi-text">
-                            <h6>$1099,00</h6>
-                            <p>Canon EOS 6D Mark II (Body only)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="./img/product/10.png" alt="">
-                            <div class="pi-links">
-                                <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pi-text">
-                            <h6>$1399,00</h6>
-                            <p>Canon EOS 6D Mark II + kit lens</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="./img/product/11.png" alt="">
-                            <div class="pi-links">
-                                <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pi-text">
-                            <h6>$839,00</h6>
-                            <p>Canon EOS 77D + 18-135mm lens </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="./img/product/12.png" alt="">
-                            <div class="pi-links">
-                                <a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pi-text">
-                            <h6>$499,00</h6>
-                            <p>Canon EOS 2000D + 18-55mm kit lens </p>
-                        </div>
-                    </div>
-                </div>--%>
             
             <div class="text-center pt-5">
-                <button class="site-btn sb-line sb-dark">LOAD MORE</button>
+                <asp:Button type="button" ID="btn_loadmore" runat="server" CssClass="site-btn sb-line sb-dark" Text="LOAD MORE"   />
             </div>
         </div>
     </section>

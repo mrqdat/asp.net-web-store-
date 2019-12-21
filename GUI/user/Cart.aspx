@@ -41,6 +41,16 @@
             return total;
         }
     </script>--%>
+    <script>
+        function capnhatsoluong() {
+            var xhttp = new XMLHttpRequest();
+            var soluong = document.getElementById("qty_sp");
+            xhttp.onreadystatechange = function () {
+                if(this.readyState == )
+            }
+        }
+
+    </script>
 </asp:Content>
 
 <asp:Content ID="cart_content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -67,44 +77,61 @@
                            
                         <div class="cart-table-warp">
                             <div class="container" style="text-align:left;">
-                                <asp:GridView ID="grvGioHang" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="False" GridLines="None" OnRowDeleting="grvGioHang_RowDeleting" >
+                                <asp:GridView ID="grvGioHang" runat="server" CssClass="table table-striped table-hover"   GridLines="None"  AutoGenerateColumns="false"  OnRowCommand="grvGioHang_RowCommand" >
                                     <Columns  >
                                         <asp:TemplateField>
                                             <ItemTemplate>
-                                                <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' width="100"/>
+                                                <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' Width="100" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:BoundField DataField="TenSP" HeaderText="Sản phẩm" />
                                         <asp:BoundField DataField="GiaTien" HeaderText="Giá" />
                                         <asp:TemplateField HeaderText="Số lượng">
-                                            <ItemTemplate>                                               
-                                                    <div class="quantity">
-                                                        <div class="pro-qty">
-                                                            <asp:Textbox Id="qty_sp" runat="server" type="text" value='<%# Eval("SoLuong") %>'/>
-                                                        </div>
-                                                    </div>                                             
+                                            <ItemTemplate>
+                                                <div class="quantity">
+                                                    <div class="pro-qty">
+                                                        <asp:TextBox ID="qty_sp" runat="server" type="text" value='<%# Eval("SoLuong") %>' />
+                                                    </div>
+                                                </div>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <%--<asp:BoundField DataField="SoLuong" HeaderText="Quantity" />--%>
                                         <asp:BoundField DataField="ThanhTien" HeaderText="Thành tiền" />
-                                        <asp:CommandField ShowDeleteButton="true" DeleteImageUrl="~/user/img/cart/reset.png"   ButtonType="Image" ControlStyle-Width="15px"/>
-                                        <asp:CommandField ShowDeleteButton="true" DeleteImageUrl="~/user/img/cart/Delete-icon.png"   ButtonType="Image" ControlStyle-Width="15px"/>
-                                        <%--<asp:TemplateField>
+                                        <%--<asp:CommandField ShowDeleteButton="true" DeleteImageUrl="~/user/img/cart/reset.png"   ButtonType="Image" ControlStyle-Width="15px"/>--%>
+                                        <%--<asp:CommandField ShowDeleteButton="true" DeleteImageUrl="~/user/img/cart/Delete-icon.png"   ButtonType="Image" ControlStyle-Width="15px"  data/>--%>
+
+                                        <asp:TemplateField>
                                             <ItemTemplate>
-                                                 
-                                                    <div class="">
-                                                        <asp:ImageButton runat="server" ID="btn_update" ImageUrl="~/user/img/cart/reset.png" Width="20" CommandA=""/>
+                                                
+                                                <asp:LinkButton ID="btn_xoa" runat="server" Type="button" data-toggle="modal" data-target="#modal_thongbao" ><image src="/user/img/cart/Delete-icon.png" Width="20px" ></image></asp:LinkButton>
+
+
+                                                <div class="modal fade" id="modal_thongbao" role="dialog" style="top: 30%;">
+                                                <div class="modal-dialog modal-md">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Thông báo</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Bạn có chắc muốn xóa sản phầm này khỏi giỏ hàng ?</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <asp:LinkButton ID="btn_xoasp" runat="server" type="button" CssClass="btn btn-warning" data-dismiss="modal" Text="Chắc"   CommandName="xoasp" CommandArgument='<%#Eval("MaSP") %>'/>
+                                                            <button type="button" class="btn btn-success" data-dismiss="modal">À, nhấn nhầm thôi !</button>
+                                                        </div>
                                                     </div>
-                                                    <div class="">
-                                                        <asp:ImageButton runat="server" ID="btn_delete" ImageUrl="~/user/img/cart/Delete-icon.png"  Width="20" OnClick="btn_delete_Click"/>
-                                                    </div>
-                                                 
+                                                </div>
+                                            </div>
                                             </ItemTemplate>
-                                        </asp:TemplateField>--%>
+                                        </asp:TemplateField>
+                                         
                                     </Columns>
                                     
                                 </asp:GridView>
                               
+
+                                
                             </div>
                             
                         </div>
@@ -127,19 +154,30 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                   <button runat="server" id="btn_thanhtoan" type="button" class="close" data-dismiss="modal"  onclick="btn_thanhtoan_Click">&times;</button>
-                                  <h4 class="modal-title">Chi tiết hóa đơn mua hàng của bạn</h4>
+                                  <h4 class="modal-title">Thông tin đơn hàng</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <h4 class="card-title">Mã hóa đơn:</h4><asp:Label ID="lb_mahd" runat="server"  Text="0"></asp:Label>
-                                    <h4 class="card-title">Tên người mua:</h4><asp:Label ID="lb_tenTK" runat="server" ForeColor="Black" ></asp:Label>
-                                    <h4 class="card-title">Ngày mua:</h4><asp:Label ID="lb_ngaymua" runat="server" ></asp:Label>
-                                    <h4 class="card-title">Địa chỉ giao hàng:</h4><asp:Label ID="lb_diachi" runat="server" ></asp:Label>
-                                    <h4 class="card-title">SDT người nhận:</h4><asp:Label ID="lb_sdt" runat="server"></asp:Label>
-                                    <h4 class="card-title">Tổng tiền:</h4><asp:Label ID="lb_tongtien" runat="server"></asp:Label>
-
+                                    <h4 class="card-title">Mã hóa đơn:</h4><asp:TextBox ID="txb_mahd" runat="server" CssClass="form-control" Text="" Enabled="false"></asp:TextBox>
+                                    <h4 class="card-title">Tên người mua:</h4><asp:TextBox ID="txb_tenTK" runat="server" CssClass="form-control" ForeColor="Black" Text="" ></asp:TextBox>
+                                    <h4 class="card-title">Ngày mua:</h4><asp:TextBox ID="txb_ngaymua" runat="server" CssClass="form-control" Text='' Enabled="false"></asp:TextBox>
+                                    <h4 class="card-title">Địa chỉ giao hàng:</h4><asp:TextBox ID="txb_diachi" runat="server" CssClass="form-control" Text=""></asp:TextBox>
+                                    <h4 class="card-title">SDT người nhận:</h4><asp:TextBox ID="txb_sdt" runat="server" CssClass="form-control" Text=""></asp:TextBox>
+                                    
                                 </div>
                                 <div class="modal-footer">
-                                  <button type="button" class="btn btn-default" data-dismiss="modal">Chấp nhận và thanh toán</button>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <h4 class="card-title">Tổng tiền:</h4><asp:Label ID="lb_tongtien" runat="server" Text=" " ></asp:Label>
+
+                                            </div>
+                                            <div class="col-lg-6" >
+                                                <asp:Button runat="server" id="btn_cnthanhtoan"  type="button" CssClass="btn btn-default" data-dismiss="modal" style="float:right;" OnClick="btn_cnthanhtoan_Click1" Text="Chấp nhận và thanh toán "/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                  
                                 </div>
                             </div>
                         </div>

@@ -141,6 +141,7 @@
     <Content Include="user\js\map.js" />
     <Content Include="user\js\owl.carousel.min.js" />
     <Content Include="user\Product.aspx" />
+    <Content Include="user\Profile.aspx" />
     <Content Include="user\searchResult.aspx" />
     <Content Include="Web.config" />
     <Content Include="user\index.aspx" />
@@ -237,6 +238,13 @@
     </Compile>
     <Compile Include="user\Product.aspx.designer.cs">
       <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\searchResult.aspx.cs">
       <DependentUpon>searchResult.aspx</DependentUpon>

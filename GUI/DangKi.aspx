@@ -7,7 +7,7 @@
     
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>Star Admin Premium Bootstrap Admin Dashboard Template</title>
+    <title>Divisima | Đăng kí</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css"/>
     <link rel="stylesheet" href="../assets/vendors/iconfonts/ionicons/css/ionicons.css"/>
@@ -87,7 +87,7 @@
                     </div>
                   </div>
                     <asp:RequiredFieldValidator ID="rfv_pass" runat="server"   ControlToValidate="pass" ErrorMessage="Mật khẩu không được để trống !" ForeColor="Red" Display="Dynamic" Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="rev_pass" runat="server" ControlToValidate="pass" ErrorMessage="MẬt khẩu phải từ 6 - 15 kí tự !" ForeColor="Red" ValidationExpression="\w{6,15}" Display="Dynamic"  Font-Size="10px" Height="15px"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="rev_pass" runat="server" ControlToValidate="pass" ErrorMessage="Mật khẩu phải từ 6 - 15 kí tự !" ForeColor="Red" ValidationExpression="\w{6,15}" Display="Dynamic"  Font-Size="10px" Height="15px"></asp:RegularExpressionValidator>
                   <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox ID="pass" runat="server" type="password" class="form-control" placeholder="Password"/>
@@ -100,7 +100,7 @@
                     </div>
                   </div>
                     <asp:RequiredFieldValidator ID="rfv_conpass" runat="server" ControlToValidate="confirm_pass" ErrorMessage="Bạn phải nhập mật khẩu trước !" ForeColor="Red" Display="Dynamic"   Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
-                      <asp:CompareValidator ID="cv_conpass" runat="server" ControlToCompare="pass" ControlToValidate="confirm_pass" ErrorMessage="Mật khẩu không trùng khớp!" ForeColor="Red"   Font-Size="10px" Height="15px"></asp:CompareValidator>
+                      <asp:CompareValidator ID="cv_conpass" runat="server" ControlToCompare="pass" ControlToValidate="confirm_pass" ErrorMessage="Mật khẩu không trùng khớp!" ForeColor="Red"   Font-Size="10px" Height="15px" Display="Dynamic"></asp:CompareValidator>
                   <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox ID="confirm_pass" runat="server" type="password" class="form-control" placeholder="Confirm Password"/>
@@ -112,7 +112,7 @@
                       </div>
                     </div>
                   </div>
-                    <asp:RequiredFieldValidator ID="rfv_mail" runat="server" ControlToValidate="txb_Email" ValidateExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ErrorMessage="Email không hợp lệ!" ForeColor="Red" Display="Dynamic" Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfv_mail" runat="server" ControlToValidate="txb_Email" ValidateExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ErrorMessage="Email không được trống hoặc không hợp lệ!" ForeColor="Red" Display="Dynamic" Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
                   <div class="form-group">
                     <div class="input-group">
                       <asp:TextBox ID="txb_Email" runat="server" type="text" class="form-control" placeholder="Email"/>

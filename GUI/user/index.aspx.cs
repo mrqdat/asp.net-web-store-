@@ -64,6 +64,42 @@ namespace GUI
 
                 }
             }
+            
         }
+        protected void lb_topword_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("searchResult.aspx?keyword=" + lb_topword.Text);
+        }
+        protected void lb_topword1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("searchResult.aspx?keyword=" + lb_topword1.Text);
+        }
+        protected void lb_topword2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("searchResult.aspx?keyword=" + lb_topword2.Text);
+        }
+        protected void lb_topword3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("searchResult.aspx?keyword=" + lb_topword3.Text);
+        }
+        protected void lb_topword4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("searchResult.aspx?keyword=" + lb_topword4.Text);
+        }
+        protected void lb_topword5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("searchResult.aspx?keyword=" + lb_topword5.Text);
+        }
+        protected void lb_topword6_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("searchResult.aspx?keyword=" + lb_topword6.Text);
+        }
+
+        protected void imgAnhMinhHoa_Click(object sender, ImageClickEventArgs e)
+        {
+           
+            Response.Redirect("Product.aspx?id=" + "SP01");
+        }
+        
     }
 }

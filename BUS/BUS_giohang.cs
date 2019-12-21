@@ -49,9 +49,10 @@ namespace BUS
             return dtb_giohang.Rows.Count;
         }
 
-        public static bool xoaSP(DTO_giohang gh)
+        public static bool xoaSP(string tentk, string masp)
         {
-            return DAO_giohang.xoaSp(gh);
+            
+            return DAO_giohang.xoasp(tentk,masp);
         }
     }
 }

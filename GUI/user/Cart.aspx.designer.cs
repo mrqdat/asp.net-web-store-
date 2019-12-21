@@ -40,49 +40,49 @@ namespace GUI.user {
         protected global::System.Web.UI.HtmlControls.HtmlButton btn_thanhtoan;
         
         /// <summary>
-        /// lb_mahd control.
+        /// txb_mahd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_mahd;
+        protected global::System.Web.UI.WebControls.TextBox txb_mahd;
         
         /// <summary>
-        /// lb_tenTK control.
+        /// txb_tenTK control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_tenTK;
+        protected global::System.Web.UI.WebControls.TextBox txb_tenTK;
         
         /// <summary>
-        /// lb_ngaymua control.
+        /// txb_ngaymua control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_ngaymua;
+        protected global::System.Web.UI.WebControls.TextBox txb_ngaymua;
         
         /// <summary>
-        /// lb_diachi control.
+        /// txb_diachi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_diachi;
+        protected global::System.Web.UI.WebControls.TextBox txb_diachi;
         
         /// <summary>
-        /// lb_sdt control.
+        /// txb_sdt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_sdt;
+        protected global::System.Web.UI.WebControls.TextBox txb_sdt;
         
         /// <summary>
         /// lb_tongtien control.
@@ -92,6 +92,15 @@ namespace GUI.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lb_tongtien;
+        
+        /// <summary>
+        /// btn_cnthanhtoan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_cnthanhtoan;
         
         /// <summary>
         /// btn_ttmuahang control.

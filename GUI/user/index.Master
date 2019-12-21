@@ -90,7 +90,7 @@
                 <div class="container">
                     <!-- menu -->
                     <ul class="main-menu">
-                        <li><a href="#">Home</a></li>
+                        <li ><a href="#">Home</a></li>
                         <li><a href="#">Camera</a>
                             <ul class="sub-menu">
                                 <li><a href="#">Canon</a></li>

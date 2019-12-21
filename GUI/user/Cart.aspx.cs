@@ -28,6 +28,7 @@ namespace GUI.user
                     if (!Page.IsPostBack)
                     {
                         DataTable dtb_giohang = BUS_giohang.loadgiohang(tenTK);
+                        
                         grvGioHang.DataSource = dtb_giohang;
                         grvGioHang.DataBind();
                         lblTongTien.Text = BUS_giohang.tinhtien(tenTK) + " USD";
@@ -47,24 +48,31 @@ namespace GUI.user
             if(cookie != null)
             {
                 string tenTK = cookie.Value;
-                DTO_hoadon hd = new DTO_hoadon();
-                TaiKhoanDTO tk = TaiKhoanBUS.LayThongTinTaiKhoan(tenTK);
-                //hd.Tentaikhoan = tk.TenTaiKhoan;
-                //hd.Diachi = tk.DiaChi;
-                //hd.Ngaymua = DateTime.Now;
-                //hd.Tongtien = Convert.ToInt32(lblTongTien.Text);
-                //hd.Sdt = tk.SDT;
+                if (!Page.IsPostBack)
+                {
+                    DTO_hoadon hd = new DTO_hoadon();
+                    TaiKhoanDTO tk = TaiKhoanBUS.LayThongTinTaiKhoan(tenTK);
+                    //hd.Tentaikhoan = tk.TenTaiKhoan;
+                    //hd.Diachi = tk.DiaChi;
+                    //hd.Ngaymua = DateTime.Now;
+                    //hd.Tongtien = Convert.ToInt32(lblTongTien.Text);
+                    //hd.Sdt = tk.SDT;
 
 
-                lb_mahd.Text = "###";
-                lb_tongtien.Text = lblTongTien.Text;
-                lb_tenTK.Text = tk.HoTen;                
-                lb_sdt.Text = tk.SDT;
-                lb_diachi.Text = tk.DiaChi;
-                lb_ngaymua.Text = DateTime.Now.ToString();
+                    //txb_mahd.Text = "###";
+                    lb_tongtien.Text = BUS_giohang.tinhtien(tenTK) + " USD";
+
+                    //txb_tenTK.Text = tk.HoTen;
+                    //txb_sdt.Text = tk.SDT;
+                    //txb_diachi.Text = tk.DiaChi;
+                    txb_ngaymua.Text = DateTime.Now.ToString();
+
+                }
 
             }
         }
+
+
         //protected void btnThanhToan_Click(object sender, EventArgs e)
         //{
         //    //string tenTK = Session["username"].ToString();
@@ -100,24 +108,8 @@ namespace GUI.user
         {
             Response.Redirect("index.aspx");
         }
-        protected void btn_delete_Click(object sender, ImageClickEventArgs e)
-        {
-           
-            
-            HttpCookie cookie = Request.Cookies["tenTK"];
-            if (cookie != null)
-            {
-                DTO_giohang gh = new DTO_giohang();
-                BUS_giohang.xoaSP(gh);
-                Response.Redirect(Request.RawUrl);
-            }
-            
-        }
 
-        protected void grvGioHang_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-
-        }
+        
 
         protected void rpt_slider_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
@@ -150,6 +142,34 @@ namespace GUI.user
                     Response.Redirect("../DangNhap.aspx");
 
                 }
+            }
+        }
+
+        protected void btn_cnthanhtoan_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("");
+        }
+ 
+
+        protected void grvGioHang_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if(e.CommandName == "xoasp")
+            {
+                HttpCookie cookie = Request.Cookies["TenTk"];
+                string tentk = cookie.Value;
+
+                string masp = e.CommandArgument.ToString();
+
+                if(BUS_giohang.xoaSP(tentk, masp))
+                {
+                    Response.Write("<script>alert('tc')</script>");
+                    Response.Redirect(Request.RawUrl);
+                }
+                
+            }
+            else
+            {
+                Response.Write("<script>alert('failed')</script>");
             }
         }
     }
