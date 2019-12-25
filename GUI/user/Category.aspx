@@ -103,8 +103,10 @@
                 </div>
 
                 <div class="col-lg-10  order-1 order-lg-2 mb-5 mb-lg-0">
-                    <div class="row">
-                        <asp:Repeater id="dtl_sanpham" runat="server"  OnItemCommand="rpt_slider_ItemCommand" >
+                    <h4>Chọn loại sản phẩm:</h4>
+                    <asp:DropDownList ID="ddl_sanpham" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddl_sanpham_SelectedIndexChanged" Width="30%"></asp:DropDownList>
+                    <div class="row" style="padding-top:25px;padding-left:10px;">
+                        <asp:Repeater id="dtl_sanpham" runat="server"  OnItemCommand="rpt_slider_ItemCommand"  >
                             <ItemTemplate>
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="product-item">

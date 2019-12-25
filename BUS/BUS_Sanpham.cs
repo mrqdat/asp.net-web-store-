@@ -15,6 +15,11 @@ namespace BUS
             return DAO_Sanpham.LayDSTSanpham();
         }
 
+        public static List<DTO_Sanpham> LayDSsp(string malsp)
+        {
+            return DAO_Sanpham.LayDSTSanpham(malsp);
+        }
+
         public static DTO_Sanpham LayThongTinsp(string tensp)
         {
             if (!DAO_Sanpham.KTspTonTai(tensp))

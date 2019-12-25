@@ -17,6 +17,12 @@ namespace GUI.user
             {
                 dtl_sanpham.DataSource = BUS_Sanpham.LayDSsp();
                 dtl_sanpham.DataBind();
+
+                ddl_sanpham.DataSource = BUS_Loaisanpham.LayDSLoaiSanPham();
+                ddl_sanpham.DataTextField = "TenLoaiSP";
+                ddl_sanpham.DataValueField = "MaLoaiSP";
+                ddl_sanpham.AutoPostBack = true;
+                ddl_sanpham.DataBind();
             }
         }
         protected void rpt_slider_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -51,6 +57,13 @@ namespace GUI.user
 
                 }
             }
+        }
+
+        protected void ddl_sanpham_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string malsp = ddl_sanpham.SelectedValue;
+            dtl_sanpham.DataSource = BUS_Sanpham.LayDSsp(malsp);
+            dtl_sanpham.DataBind();
         }
     }
 }

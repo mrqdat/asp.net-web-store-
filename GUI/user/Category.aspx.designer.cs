@@ -13,6 +13,15 @@ namespace GUI.user {
     public partial class Category {
         
         /// <summary>
+        /// ddl_sanpham control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_sanpham;
+        
+        /// <summary>
         /// dtl_sanpham control.
         /// </summary>
         /// <remarks>

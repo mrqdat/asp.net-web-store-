@@ -41,7 +41,7 @@
             return total;
         }
     </script>--%>
-    <script>
+   <%-- <script>
         function capnhatsoluong() {
             var xhttp = new XMLHttpRequest();
             var soluong = document.getElementById("qty_sp");
@@ -50,7 +50,7 @@
             }
         }
 
-    </script>
+    </script>--%>
 </asp:Content>
 
 <asp:Content ID="cart_content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -145,7 +145,8 @@
                         <input type="text" placeholder="Enter promo code">
                         <button>Submit</button>
                     </div>
-                    <button type="button" runat="server"  class="site-btn" data-toggle="modal"  data-target="#myModal" >Thanh toán</button>
+                    <asp:LinkButton  ID="btn_ttoan" runat="server" Type="button" CssClass="close site-btn" data-dismiss="modal" data-target="#myModal"  Text="Thanh Toán" />
+                    
 
                     <%--modal hiển thị chi tiết hóa đơn--%>
 
@@ -153,15 +154,15 @@
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                  <button runat="server" id="btn_thanhtoan" type="button" class="close" data-dismiss="modal"  onclick="btn_thanhtoan_Click">&times;</button>
+                                  
                                   <h4 class="modal-title">Thông tin đơn hàng</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <h4 class="card-title">Mã hóa đơn:</h4><asp:TextBox ID="txb_mahd" runat="server" CssClass="form-control" Text="" Enabled="false"></asp:TextBox>
-                                    <h4 class="card-title">Tên người mua:</h4><asp:TextBox ID="txb_tenTK" runat="server" CssClass="form-control" ForeColor="Black" Text="" ></asp:TextBox>
-                                    <h4 class="card-title">Ngày mua:</h4><asp:TextBox ID="txb_ngaymua" runat="server" CssClass="form-control" Text='' Enabled="false"></asp:TextBox>
+                                    <h4 class="card-title">Mã hóa đơn:</h4><asp:TextBox ID="txb_mahd" runat="server" CssClass="form-control"  Text="#######" Enabled="false"></asp:TextBox>
+                                    <h4 class="card-title">Tên người mua:</h4><asp:TextBox ID="txb_tenTK" runat="server" CssClass="form-control" ForeColor="Black"  Text=""  ></asp:TextBox>
+                                    <h4 class="card-title">Ngày mua:</h4><asp:TextBox ID="txb_ngaymua" runat="server" CssClass="form-control"   Enabled="false" Text="" ></asp:TextBox>
                                     <h4 class="card-title">Địa chỉ giao hàng:</h4><asp:TextBox ID="txb_diachi" runat="server" CssClass="form-control" Text=""></asp:TextBox>
-                                    <h4 class="card-title">SDT người nhận:</h4><asp:TextBox ID="txb_sdt" runat="server" CssClass="form-control" Text=""></asp:TextBox>
+                                    <h4 class="card-title">SDT người nhận:</h4><asp:TextBox ID="txb_sdt" runat="server" CssClass="form-control" Text="" ></asp:TextBox>
                                     
                                 </div>
                                 <div class="modal-footer">

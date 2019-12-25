@@ -14,7 +14,8 @@ namespace GUI.user
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack) {
+            if (!Page.IsPostBack)
+            {
 
 
                 rpt_slider.DataSource = BUS_Sanpham.LayDSsp();
@@ -28,77 +29,62 @@ namespace GUI.user
                     if (!Page.IsPostBack)
                     {
                         DataTable dtb_giohang = BUS_giohang.loadgiohang(tenTK);
-                        
+                        TaiKhoanDTO tk = TaiKhoanBUS.LayThongTinTaiKhoan(tenTK);
+
                         grvGioHang.DataSource = dtb_giohang;
                         grvGioHang.DataBind();
                         lblTongTien.Text = BUS_giohang.tinhtien(tenTK) + " USD";
+
+                        lb_tongtien.Text = BUS_giohang.tinhtien(tenTK) + " USD";
+                        txb_tenTK.Text = tk.TenTaiKhoan;
+                        txb_sdt.Text = tk.SDT;
+                        txb_diachi.Text = tk.DiaChi;
+                        txb_ngaymua.Text = DateTime.Now.ToString();
                     }
                 }
                 else
                 {
                     Response.Redirect("../DangNhap.aspx");
                 }
-            }
-
-        }
-
-        protected void btn_thanhtoan_Click(object sender, EventArgs e) {
-
-            HttpCookie cookie = Request.Cookies["tenTK"];
-            if(cookie != null)
-            {
-                string tenTK = cookie.Value;
-                if (!Page.IsPostBack)
-                {
-                    DTO_hoadon hd = new DTO_hoadon();
-                    TaiKhoanDTO tk = TaiKhoanBUS.LayThongTinTaiKhoan(tenTK);
-                    //hd.Tentaikhoan = tk.TenTaiKhoan;
-                    //hd.Diachi = tk.DiaChi;
-                    //hd.Ngaymua = DateTime.Now;
-                    //hd.Tongtien = Convert.ToInt32(lblTongTien.Text);
-                    //hd.Sdt = tk.SDT;
-
-
-                    //txb_mahd.Text = "###";
-                    lb_tongtien.Text = BUS_giohang.tinhtien(tenTK) + " USD";
-
-                    //txb_tenTK.Text = tk.HoTen;
-                    //txb_sdt.Text = tk.SDT;
-                    //txb_diachi.Text = tk.DiaChi;
-                    txb_ngaymua.Text = DateTime.Now.ToString();
-
-                }
 
             }
         }
+
+        //protected void btn_thanhtoan_Click(object sender, EventArgs e) {
+
+        //    HttpCookie cookie = Request.Cookies["tenTK"];
+        //    if(cookie != null)
+        //    {
+        //        string tenTK = cookie.Value;
+        //        if (!Page.IsPostBack)
+        //        {
+        //            DTO_hoadon hd = new DTO_hoadon();
+        //            TaiKhoanDTO tk = TaiKhoanBUS.LayThongTinTaiKhoan(tenTK);
+        //            //hd.Tentaikhoan = tk.TenTaiKhoan;
+        //            //hd.Diachi = tk.DiaChi;
+        //            //hd.Ngaymua = DateTime.Now;
+        //            //hd.Tongtien = Convert.ToInt32(lblTongTien.Text);
+        //            //hd.Sdt = tk.SDT;
+
+
+        //            //txb_mahd.Text = "###";
+        //            lb_tongtien.Text = BUS_giohang.tinhtien(tenTK) + " USD";
+
+        //            txb_tenTK.Text = tk.TenTaiKhoan;
+        //            txb_sdt.Text = tk.SDT;
+        //            txb_diachi.Text = tk.DiaChi;
+        //            txb_ngaymua.Text = DateTime.Now.ToString();
+
+        //        }
+
+        //    }
+        //}
 
 
         //protected void btnThanhToan_Click(object sender, EventArgs e)
         //{
         //    //string tenTK = Session["username"].ToString();
-        //    HttpCookie cookie = Request.Cookies["tenTK"];
-        //    if (cookie != null)
-        //    {
-        //        string tenTK = cookie.Value;              
-        //        DTO_hoadon hd = new DTO_hoadon();
-        //        hd.Tentaikhoan = tenTK;
-        //        hd.Ngaymua = DateTime.Now;
-        //        hd.Diachi = "Tp.HCM";
-        //        hd.Sdt = "0905939947";
-        //        hd.Tongtien = BUS_giohang.tinhtien(tenTK);
-        //        hd.Mahd = BUS_hoadon.themhoadon(hd);
-
-        //        DataTable dtbKetQua = BUS_giohang.loadgiohang(tenTK);
-        //        foreach (DataRow dr in dtbKetQua.Rows)
-        //        {
-        //            DTO_cthoadon cthd = new DTO_cthoadon();
-        //            cthd.Mahd = hd.Mahd;
-        //            cthd.Masp = dr["MaSP"].ToString();
-        //            cthd.Soluong = Convert.ToInt32(dr["SoLuong"]);
-        //            cthd.Dongia = Convert.ToInt32(dr["GiaTien"]);
-        //            BUS_cthoadon.themcthd(cthd);
-        //        }
-        //    }
+        //   
         //    //Response.Redirect("");
         //}
 
@@ -147,9 +133,39 @@ namespace GUI.user
 
         protected void btn_cnthanhtoan_Click1(object sender, EventArgs e)
         {
-            Response.Redirect("");
+            HttpCookie cookie = Request.Cookies["tenTK"];
+            if (cookie != null)
+            {
+                string tentk = cookie.Value;
+                TaiKhoanDTO tk = TaiKhoanBUS.LayThongTinTaiKhoan(tentk);
+                DTO_hoadon hd = new DTO_hoadon();
+                hd.Tentaikhoan = tentk;
+                hd.Ngaymua = DateTime.Now;
+                hd.Diachi = tk.DiaChi;
+                hd.Sdt = tk.SDT;
+                hd.Tongtien = BUS_giohang.tinhtien(tentk);
+                hd.Mahd = BUS_hoadon.themhoadon(hd);
+
+                DataTable dtbketqua = BUS_giohang.loadgiohang(tentk);
+                foreach (DataRow dr in dtbketqua.Rows)
+                {
+                    DTO_cthoadon cthd = new DTO_cthoadon();
+                    cthd.Mahd = hd.Mahd;
+                    cthd.Masp = dr["masp"].ToString();
+                    cthd.Soluong = Convert.ToInt32(dr["soluong"]);
+                    cthd.Dongia = Convert.ToInt32(dr["giatien"]);
+                    BUS_cthoadon.themcthd(cthd);
+                }
+
+
+                Response.Write("<script>alert('Đơn hàng xử ý thành công!')</script>");
+                BUS_giohang.xoagh(tentk);
+            }
+
+            
+            //response.redirect("");
         }
- 
+
 
         protected void grvGioHang_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -163,7 +179,7 @@ namespace GUI.user
                 if(BUS_giohang.xoaSP(tentk, masp))
                 {
                     Response.Write("<script>alert('tc')</script>");
-                    Response.Redirect(Request.RawUrl);
+                    Response.Redirect("cart.aspx");
                 }
                 
             }
@@ -172,5 +188,8 @@ namespace GUI.user
                 Response.Write("<script>alert('failed')</script>");
             }
         }
+
+         
+        
     }
 }

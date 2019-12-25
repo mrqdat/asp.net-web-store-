@@ -31,13 +31,13 @@ namespace GUI.user {
         protected global::System.Web.UI.WebControls.Label lblTongTien;
         
         /// <summary>
-        /// btn_thanhtoan control.
+        /// btn_ttoan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btn_thanhtoan;
+        protected global::System.Web.UI.WebControls.LinkButton btn_ttoan;
         
         /// <summary>
         /// txb_mahd control.

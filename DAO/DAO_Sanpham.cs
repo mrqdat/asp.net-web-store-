@@ -24,6 +24,20 @@ namespace DAO
             return lstSanpham;
         }
 
+        public static List<DTO_Sanpham> LayDSTSanpham(string malsp)
+        {
+            string query = "SELECT * FROM SanPham where TrangThai =1 and MaLoaiSP = @MaLoaiSP";
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@MaLoaiSP", malsp);
+            DataTable dtbSanpham = DataProvider.ExecuteSelectQuery(query, param);
+            List<DTO_Sanpham> lstSanpham = new List<DTO_Sanpham>();
+            foreach (DataRow dr in dtbSanpham.Rows)
+            {
+                lstSanpham.Add(ConvertToDTO(dr));
+            }
+            return lstSanpham;
+        }
+
         public static DTO_Sanpham laythongtinsanpham(string tensp)
         {
             string query = "SELECT * FROM SanPham WHERE TenSP = @tensp";
@@ -44,16 +58,14 @@ namespace DAO
         public static bool Themsp(DTO_Sanpham sp)
         {
             string query = "INSERT INTO SanPham (MaSP, TenSP, GiaTien, ThongTin, SoLuongTonKho, MaLoaiSP, AnhMinhHoa, TrangThai) VALUES (@masp, @tensp, @giatien,@thongtin,@soluongton,@maloaisp,0,1)";
-            SqlParameter[] param = new SqlParameter[8];
+            SqlParameter[] param = new SqlParameter[6];
             param[0] = new SqlParameter("@masp", sp.Masp);
             param[1] = new SqlParameter("@tensp", sp.Tensp);
             param[2] = new SqlParameter("@giatien", sp.Giatien);
             param[3] = new SqlParameter("@thongtin", sp.Thongtin);
             param[4] = new SqlParameter("@soluongton", sp.Soluongtonkho);
             param[5] = new SqlParameter("@maloaisp", sp.Maloaisp);
-            param[6] = new SqlParameter("@anhminhhoa", sp.Anhminhhoa);
-            param[7] = new SqlParameter("@trangthai", sp.TrangThai);
-
+            
             return DataProvider.ExecuteInsertQuery(query, param) == 1;
         }
 

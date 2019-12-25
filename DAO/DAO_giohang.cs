@@ -75,5 +75,13 @@ namespace DAO
 
         //    return Convert.ToInt32(DataProvider.ExecuteSelectQuery(query, param).Rows[0][0]);
         //}
+        public static bool xoagh(string tentk)
+        {
+            string query = "delete GioHang where TenTaiKhoan = @TenTaiKhoan";
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@TenTaiKhoan", tentk);
+            
+            return DataProvider.ExecuteDeleteQuery(query, param) == 1;
+        }
     }
 }

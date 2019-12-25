@@ -58,6 +58,15 @@ namespace GUI {
         protected global::System.Web.UI.WebControls.LinkButton btn_qlsp;
         
         /// <summary>
+        /// rfv_masp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_masp;
+        
+        /// <summary>
         /// txb_masp control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace GUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txb_masp;
+        
+        /// <summary>
+        /// rfv_tensp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_tensp;
         
         /// <summary>
         /// txb_tensp control.
@@ -76,6 +94,15 @@ namespace GUI {
         protected global::System.Web.UI.WebControls.TextBox txb_tensp;
         
         /// <summary>
+        /// rfv_thongtin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_thongtin;
+        
+        /// <summary>
         /// txb_thongtin control.
         /// </summary>
         /// <remarks>
@@ -83,6 +110,15 @@ namespace GUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txb_thongtin;
+        
+        /// <summary>
+        /// rfv_giatien control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_giatien;
         
         /// <summary>
         /// txb_giatien control.
@@ -94,6 +130,15 @@ namespace GUI {
         protected global::System.Web.UI.WebControls.TextBox txb_giatien;
         
         /// <summary>
+        /// rfv_slton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_slton;
+        
+        /// <summary>
         /// txb_sltonkho control.
         /// </summary>
         /// <remarks>
@@ -103,6 +148,15 @@ namespace GUI {
         protected global::System.Web.UI.WebControls.TextBox txb_sltonkho;
         
         /// <summary>
+        /// rfv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv;
+        
+        /// <summary>
         /// txb_maloaisp control.
         /// </summary>
         /// <remarks>
@@ -110,6 +164,15 @@ namespace GUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txb_maloaisp;
+        
+        /// <summary>
+        /// btn_themsp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_themsp;
         
         /// <summary>
         /// grv_sp control.

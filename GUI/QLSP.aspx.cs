@@ -32,7 +32,39 @@ namespace GUI
         {
             Response.Redirect("Admin_Dashboard.aspx");
         }
+        protected void btn_themsp_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txb_masp.Text) || string.IsNullOrWhiteSpace(txb_tensp.Text) || 
+                string.IsNullOrWhiteSpace(txb_thongtin.Text) || string.IsNullOrWhiteSpace(txb_sltonkho.Text) ||
+                string.IsNullOrWhiteSpace(txb_giatien.Text) || string.IsNullOrWhiteSpace(txb_maloaisp.Text)  ) {
 
+
+                Response.Write("<script>alert('Phải điền dầy đủ thông tin');</script>");
+            }
+            else
+            {
+                DTO_Sanpham sp = new DTO_Sanpham();
+                sp.Masp = txb_masp.Text;
+                sp.Tensp = txb_tensp.Text;
+                sp.Thongtin = txb_thongtin.Text;
+                sp.Giatien = txb_giatien.Text;
+                sp.Soluongtonkho = txb_sltonkho.Text;
+                sp.Maloaisp = txb_maloaisp.Text;
+                
+                if (BUS_Sanpham.Themsp(sp))
+                {
+                    Response.Write("<script>alert('them moi san pham thanh cong');</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('them moi that bai');</script>");
+                }
+                
+            }
+            
+
+            
+        }
         protected void LoadDSSP()
         {
             grv_sp.DataSource = BUS_Sanpham.LayDSsp();

@@ -243,6 +243,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Mã sản phẩm</label>
                             <div class="col-sm-9">
+                                <asp:RequiredFieldValidator id="rfv_masp" runat="server" ControlToValidate="txb_masp" ErrorMessage="MaSP không được để trống!" ForeColor="Red" Display="Dynamic" Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
                               <asp:TextBox ID="txb_masp" runat="server" type="text" Cssclass="form-control" placeholder="ID"/>
                             </div>
                           </div>
@@ -251,6 +252,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Tên sản phẩm</label>
                             <div class="col-sm-9">
+                                <asp:RequiredFieldValidator id="rfv_tensp" runat="server" ControlToValidate="txb_tensp" ErrorMessage="tenSP không được để trống!" ForeColor="Red" Display="Dynamic" Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
                               <asp:TextBox ID="txb_tensp" runat="server" type="text" Cssclass="form-control" placeholder="Tên sản phẩm" />
                             </div>
                           </div>
@@ -262,6 +264,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Thông tin</label>
                             <div class="col-sm-9">
+                                <asp:RequiredFieldValidator id="rfv_thongtin" runat="server" ControlToValidate="txb_thongtin" ErrorMessage="ThongTinSP không được để trống!" ForeColor="Red" Display="Dynamic" Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
                               <asp:TextBox ID="txb_thongtin" runat="server" CssClass="form-control" placeholder="Thông tin sản phẩm" />
                             </div>
                           </div>
@@ -272,6 +275,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Giá tiền</label>
                             <div class="col-sm-9">
+                                <asp:RequiredFieldValidator id="rfv_giatien" runat="server" ControlToValidate="txb_giatien" ErrorMessage="Giá tiền SP không được để trống!" ForeColor="Red" Display="Dynamic" Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
                               <asp:TextBox ID="txb_giatien" runat="server"  CssClass="form-control" placeholder="Giá tiền" />
                             </div>
                           </div>
@@ -283,6 +287,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Số lượng tồn kho</label>
                             <div class="col-sm-9">
+                                <asp:RequiredFieldValidator id="rfv_slton" runat="server" ControlToValidate="txb_sltonkho" ErrorMessage="số lượng tồn không được để trống!" ForeColor="Red" Display="Dynamic" Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
                               <asp:TextBox ID="txb_sltonkho" runat="server" CssClass="form-control" placeholder="Số lượng tồn kho" />
                             </div>
                           </div>
@@ -293,13 +298,16 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Mã Loại Sản Phẩm</label>
                             <div class="col-sm-9">
+                                <asp:RequiredFieldValidator id="rfv" runat="server" ControlToValidate="txb_maloaisp" ErrorMessage="MaLoaiSP không được để trống!" ForeColor="Red" Display="Dynamic" Font-Size="10px" Height="15px"></asp:RequiredFieldValidator>
                               <asp:TextBox ID="txb_maloaisp" runat="server"  CssClass="form-control" placeholder="Mã loại sản phẩm" />
                             </div>
                           </div>
                         </div>
-                       </div>             
+                       </div> 
+                      
+
                    </div>
-                 
+                 <asp:Button id="btn_themsp" runat="server" type="button" CssClass="btn btn-secondary" Text="Thêm mới SP" OnClick="btn_themsp_Click"  left="30px" bottom="25px" Width="150px"></asp:Button>
                 </div>
               </div>
    
@@ -309,6 +317,7 @@
                   <div class="card-body">
                       <div class="row" style="margin-bottom:15px;">
                           <h4 class="col-lg-6 card-title">Danh sách sản phẩm</h4>
+                          
                           <input id="txb_search" class="  form-control" type="text" placeholder="tìm kiếm..." style="width: 200px; align-content: flex-start; padding-right: 10px; position: relative; left: 312px; top: 0px;" />
                       </div>
                     
@@ -321,7 +330,6 @@
                                 <asp:BoundField DataField="GiaTien" HeaderText="Giá Tiền" />
                                 <asp:BoundField DataField="SoLuongTonKho" HeaderText="Số lượng tồn" />
                                 <asp:BoundField DataField="MaLoaiSP" HeaderText="Mã loại SP" />                                 
-                                <asp:BoundField DataField="TrangThai" HeaderText="Trạng Thái" />
                                 <asp:TemplateField HeaderText="tùy chọn">
                     
                                 <ItemTemplate>
@@ -330,6 +338,7 @@
                                 </ItemTemplate>
                     
                                 </asp:TemplateField>
+                                
                             </Columns>
                         </asp:GridView>
                      

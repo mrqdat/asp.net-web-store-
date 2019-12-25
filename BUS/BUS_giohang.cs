@@ -54,5 +54,10 @@ namespace BUS
             
             return DAO_giohang.xoasp(tentk,masp);
         }
+
+        public static bool xoagh(string tentk)
+        {
+            return DAO_giohang.xoagh(tentk);
+        }
     }
 }
