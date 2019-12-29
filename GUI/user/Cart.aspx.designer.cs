@@ -40,69 +40,6 @@ namespace GUI.user {
         protected global::System.Web.UI.WebControls.LinkButton btn_ttoan;
         
         /// <summary>
-        /// txb_mahd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_mahd;
-        
-        /// <summary>
-        /// txb_tenTK control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_tenTK;
-        
-        /// <summary>
-        /// txb_ngaymua control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_ngaymua;
-        
-        /// <summary>
-        /// txb_diachi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_diachi;
-        
-        /// <summary>
-        /// txb_sdt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_sdt;
-        
-        /// <summary>
-        /// lb_tongtien control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_tongtien;
-        
-        /// <summary>
-        /// btn_cnthanhtoan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cnthanhtoan;
-        
-        /// <summary>
         /// btn_ttmuahang control.
         /// </summary>
         /// <remarks>

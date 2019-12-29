@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/user/index.Master" AutoEventWireup="true" CodeBehind="searchResult.aspx.cs" Inherits="GUI.user.searchResult" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Divisima | Search result</title>
     <meta charset="UTF-8">
@@ -33,40 +34,41 @@
     <!-- Page info -->
     <div class="page-top-info">
         <div class="container">
-            <h4>YOUR RESULT</h4>                      
+            <h4>YOUR RESULT</h4>
         </div>
     </div>
     <!-- Page info end -->
 
-     <section class="product-filter-section">
+    <section class="product-filter-section">
         <div class="container">
             <div class="section-title">
                 <h2></h2>
             </div>
-          
+
             <div class="row">
 
-                <asp:Repeater id="dtl_sanpham" runat="server"  OnItemCommand="rpt_slider_ItemCommand" >
+                <asp:Repeater ID="dtl_sanpham" runat="server" OnItemCommand="rpt_slider_ItemCommand">
                     <ItemTemplate>
                         <div class="col-lg-3 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' />   
+                                    <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' />
                                     <div class="pi-links">
-                                        <asp:LinkButton id="btn_addtocart" runat="server"  Cssclass="add-card"  CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
+                                        <asp:LinkButton ID="btn_addtocart" runat="server" CssClass="add-card" CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
                                     </div>
                                 </div>
                                 <div class="pi-text">
-                                    <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> <br />
+                                    <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label>
+                                    <br />
                                     <asp:Label ID="lblTenSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
                                 </div>
                             </div>
                         </div>
-                    </ItemTemplate>            
+                    </ItemTemplate>
                 </asp:Repeater>
-             </div>
-        
+            </div>
+
         </div>
     </section>
 </asp:Content>

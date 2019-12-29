@@ -41,7 +41,7 @@
             return total;
         }
     </script>--%>
-   <%-- <script>
+    <%-- <script>
         function capnhatsoluong() {
             var xhttp = new XMLHttpRequest();
             var soluong = document.getElementById("qty_sp");
@@ -68,17 +68,17 @@
 
 
     <!-- cart section end -->
-    <section class="cart-section spad" >
-        <div class="container" ">
+    <section class="cart-section spad">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <div class="cart-table" style="padding:25px 15px 0;">
+                    <div class="cart-table" style="padding: 25px 15px 0;">
                         <h3>Giỏ hàng của bạn</h3>
-                           
+
                         <div class="cart-table-warp">
-                            <div class="container" style="text-align:left;">
-                                <asp:GridView ID="grvGioHang" runat="server" CssClass="table table-striped table-hover"   GridLines="None"  AutoGenerateColumns="false"  OnRowCommand="grvGioHang_RowCommand" >
-                                    <Columns  >
+                            <div class="container" style="text-align: left;">
+                                <asp:GridView ID="grvGioHang" runat="server" CssClass="table table-striped table-hover" GridLines="None" AutoGenerateColumns="false" OnRowCommand="grvGioHang_RowCommand">
+                                    <Columns>
                                         <asp:TemplateField>
                                             <ItemTemplate>
                                                 <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' Width="100" />
@@ -102,41 +102,44 @@
 
                                         <asp:TemplateField>
                                             <ItemTemplate>
-                                                
-                                                <asp:LinkButton ID="btn_xoa" runat="server" Type="button" data-toggle="modal" data-target="#modal_thongbao" ><image src="/user/img/cart/Delete-icon.png" Width="20px" ></image></asp:LinkButton>
+
+                                                <asp:LinkButton ID="btn_xoa" runat="server" Type="button" data-toggle="modal" data-target="#modal_thongbao"><image src="/user/img/cart/Delete-icon.png" Width="20px" ></image></asp:LinkButton>
 
 
                                                 <div class="modal fade" id="modal_thongbao" role="dialog" style="top: 30%;">
-                                                <div class="modal-dialog modal-md">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Thông báo</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p>Bạn có chắc muốn xóa sản phầm này khỏi giỏ hàng ?</p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <asp:LinkButton ID="btn_xoasp" runat="server" type="button" CssClass="btn btn-warning" data-dismiss="modal" Text="Chắc"   CommandName="xoasp" CommandArgument='<%#Eval("MaSP") %>'/>
-                                                            <button type="button" class="btn btn-success" data-dismiss="modal">À, nhấn nhầm thôi !</button>
+                                                    <div class="modal-dialog modal-md">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+
+
+
+                                                                <h4 class="modal-title">Thông báo</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>Bạn có chắc muốn xóa sản phầm này khỏi giỏ hàng ?</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <asp:LinkButton ID="btn_xoasp" runat="server" type="button" CssClass="btn btn-warning" data-dismiss="modal" Text="Chắc" CommandName="xoasp" CommandArgument='<%# Eval("MaSP") %>'   CausesValidation="false" />
+                                                                <button type="button" class="btn btn-success" data-dismiss="modal">À, nhấn nhầm thôi !</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                         
-                                    </Columns>
-                                    
-                                </asp:GridView>
-                              
 
-                                
+                                    </Columns>
+
+                                </asp:GridView>
+
+
+
                             </div>
-                            
+
                         </div>
-                        <div class="total-cost"  ">
-                            <h6>Tổng cộng: <asp:Label ID="lblTongTien" runat="server" Text="0"></asp:Label></h6>
+                        <div class="total-cost">
+                            <h6>Tổng cộng:
+                                <asp:Label ID="lblTongTien" runat="server" Text="0"></asp:Label></h6>
                         </div>
                     </div>
                 </div>
@@ -145,46 +148,52 @@
                         <input type="text" placeholder="Enter promo code">
                         <button>Submit</button>
                     </div>
-                    <asp:LinkButton  ID="btn_ttoan" runat="server" Type="button" CssClass="close site-btn" data-dismiss="modal" data-target="#myModal"  Text="Thanh Toán" />
-                    
+                    <asp:LinkButton ID="btn_ttoan" runat="server" Type="button" CssClass="site-btn"  Text="Thanh Toán" OnClick="btn_ttoan_Click" />
+
 
                     <%--modal hiển thị chi tiết hóa đơn--%>
 
-                    <div class="modal fade" id="myModal" role="dialog">
+                    <%--<div class="modal fade" id="myModal" role="dialog" >
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                  
-                                  <h4 class="modal-title">Thông tin đơn hàng</h4>
+
+                                    <h4 class="modal-title">Thông tin đơn hàng</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <h4 class="card-title">Mã hóa đơn:</h4><asp:TextBox ID="txb_mahd" runat="server" CssClass="form-control"  Text="#######" Enabled="false"></asp:TextBox>
-                                    <h4 class="card-title">Tên người mua:</h4><asp:TextBox ID="txb_tenTK" runat="server" CssClass="form-control" ForeColor="Black"  Text=""  ></asp:TextBox>
-                                    <h4 class="card-title">Ngày mua:</h4><asp:TextBox ID="txb_ngaymua" runat="server" CssClass="form-control"   Enabled="false" Text="" ></asp:TextBox>
-                                    <h4 class="card-title">Địa chỉ giao hàng:</h4><asp:TextBox ID="txb_diachi" runat="server" CssClass="form-control" Text=""></asp:TextBox>
-                                    <h4 class="card-title">SDT người nhận:</h4><asp:TextBox ID="txb_sdt" runat="server" CssClass="form-control" Text="" ></asp:TextBox>
-                                    
+                                    <h4 class="card-title">Mã hóa đơn:</h4>
+                                    <asp:TextBox ID="txb_mahd" runat="server" CssClass="form-control" Text="#######" Enabled="false"></asp:TextBox>
+                                    <h4 class="card-title">Tên người mua:</h4>
+                                    <asp:TextBox ID="txb_tenTK" runat="server" CssClass="form-control" ForeColor="Black" Text=""></asp:TextBox>
+                                    <h4 class="card-title">Ngày mua:</h4>
+                                    <asp:TextBox ID="txb_ngaymua" runat="server" CssClass="form-control" Enabled="false" Text=""></asp:TextBox>
+                                    <h4 class="card-title">Địa chỉ giao hàng:</h4>
+                                    <asp:TextBox ID="txb_diachi" runat="server" CssClass="form-control" Text=""></asp:TextBox>
+                                    <h4 class="card-title">SDT người nhận:</h4>
+                                    <asp:TextBox ID="txb_sdt" runat="server" CssClass="form-control" Text=""></asp:TextBox>
+
                                 </div>
                                 <div class="modal-footer">
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-6">
-                                                <h4 class="card-title">Tổng tiền:</h4><asp:Label ID="lb_tongtien" runat="server" Text=" " ></asp:Label>
+                                                <h4 class="card-title">Tổng tiền:</h4>
+                                                <asp:Label ID="lb_tongtien" runat="server" Text=" "></asp:Label>
 
                                             </div>
-                                            <div class="col-lg-6" >
-                                                <asp:Button runat="server" id="btn_cnthanhtoan"  type="button" CssClass="btn btn-default" data-dismiss="modal" style="float:right;" OnClick="btn_cnthanhtoan_Click1" Text="Chấp nhận và thanh toán "/>
+                                            <div class="col-lg-6">
+                                                <asp:Button runat="server" ID="btn_cnthanhtoan" type="button" CssClass="btn btn-default" data-dismiss="modal" Style="float: right;" OnClick="btn_cnthanhtoan_Click1" Text="Chấp nhận và thanh toán " />
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                  
+
+
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <asp:LinkButton type="button" ID="btn_ttmuahang" runat="server" CssClass="site-btn sb-dark"  OnClick="btn_ttmuahang_Click">Tiếp tục mua hàng</asp:LinkButton>
+                    </div>--%>
+
+                    <asp:LinkButton type="button" ID="btn_ttmuahang" runat="server" CssClass="site-btn sb-dark" OnClick="btn_ttmuahang_Click">Tiếp tục mua hàng</asp:LinkButton>
                 </div>
             </div>
         </div>
@@ -198,33 +207,33 @@
                 <h2>Sản phẩm mới nhất</h2>
             </div>
             <div class="product-slider owl-carousel">
-                 <asp:Repeater id="rpt_slider" runat="server"  onItemCommand="rpt_slider_ItemCommand">
+                <asp:Repeater ID="rpt_slider" runat="server" OnItemCommand="rpt_slider_ItemCommand">
                     <ItemTemplate>
-                         <div class="product-item">
-                             
-                                <div class="pi-pic">
-                                    <asp:HyperLink id="hpl_sp" runat="server">
-                                        <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' /></asp:HyperLink>   
-                                    <div class="pi-links">
-<%--                                        <%--<i class=""></i><asp:LinkButton ID="btnThemGH" runat="server" Cssclass="add-card  flaticon-bag"  Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />--%>
-                                        <asp:LinkButton id="btn_addtocart" runat="server" Cssclass="add-card" CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>Thêm vào giỏ hàng</span></asp:LinkButton>
-                                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                                    </div>
+                        <div class="product-item">
+
+                            <div class="pi-pic">
+                                <asp:HyperLink ID="hpl_sp" runat="server">
+                                    <asp:Image ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' />
+                                </asp:HyperLink>
+                                <div class="pi-links">
+                                    <%--                                        <%--<i class=""></i><asp:LinkButton ID="btnThemGH" runat="server" Cssclass="add-card  flaticon-bag"  Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />--%>
+                                    <asp:LinkButton ID="btn_addtocart" runat="server" CssClass="add-card" CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
+                                    <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
                                 </div>
-                           
-                                <div class="pi-text">
-                                    <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> <br />
-                                    <asp:Label ID="lblTenSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
-                                </div>
+                            </div>
+
+                            <div class="pi-text">
+                                <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label>
+                                <br />
+                                <asp:Label ID="lblTenSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
+                            </div>
                         </div>
-                    </ItemTemplate>            
+                    </ItemTemplate>
                 </asp:Repeater>
-                
+
             </div>
         </div>
     </section>
     <!-- Related product section end -->
 
-
 </asp:Content>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          

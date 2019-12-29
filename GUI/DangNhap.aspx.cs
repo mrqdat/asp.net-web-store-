@@ -17,14 +17,14 @@ namespace GUI
 
         protected void btn_login_Click(object sender, EventArgs e)
         {
-            
+
             string tenTK = txb_user.Text;
             string mk = txb_pass.Text;
-           
 
-            if(TaiKhoanBUS.KTDangNhap(tenTK, mk))
+
+            if (TaiKhoanBUS.KTDangNhap(tenTK, mk))
             {
-                
+
                 //Session.Add("username", tenTK);
 
                 HttpCookie cookie = new HttpCookie("tenTK");
@@ -34,7 +34,7 @@ namespace GUI
 
                 if (tenTK == "admin")
                 {
-                    
+
                     Response.Write("<script>alert('Đăng nhập thành công')</script>");
                     Response.Redirect("Admin_Dashboard.aspx");
 
@@ -43,12 +43,12 @@ namespace GUI
                 {
                     //Response.Redirect(Request.RawUrl);
                     Response.Redirect("user/index.aspx");
-                    
+
                 }
             }
             else
             {
-                
+
                 Response.Write("<script>alert('Đăng nhập thất bại')</script>");
             }
         }

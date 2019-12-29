@@ -123,7 +123,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <asp:LinkButton id="btn_dangki" runat="server" class="btn btn-primary submit-btn btn-block" OnClick="btnDangKi_Click">Register</asp:LinkButton>
+                    <asp:LinkButton id="btn_dangki" runat="server" class="btn btn-primary submit-btn btn-block" OnClick="btnDangKi_Click" BackColor="#f51167">Register</asp:LinkButton>
                   </div>
                   <div class="text-block text-center my-3">
                     <span class="text-small font-weight-semibold">Already have and account ?</span>

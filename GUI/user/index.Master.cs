@@ -17,7 +17,7 @@ namespace GUI
             if (cookie == null)
             {
                 panel_logout.Visible = false;
-                
+
             }
             else
             {
@@ -26,7 +26,7 @@ namespace GUI
                 lb_amount.Text = BUS_giohang.soluongSp(tenTK).ToString();
                 panel_logout.Visible = true;
             }
-          
+
         }
 
 
@@ -39,24 +39,24 @@ namespace GUI
             //Response.Redirect(Request.RawUrl);
 
             HttpCookie cookie = Request.Cookies["tenTK"];
-            
-
-                cookie.Expires = DateTime.Now.AddDays(-1);
-                Response.Cookies.Add(cookie);
-                Response.Redirect(Request.RawUrl);
 
 
+            cookie.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(cookie);
+            Response.Redirect("index.aspx");
 
-                //Session.Abandon();
-                //Response.Redirect("index.aspx");
 
-            
+
+            //Session.Abandon();
+            //Response.Redirect("index.aspx");
+
+
 
         }
 
         protected void btn_search_Click(object sender, EventArgs e)
         {
-            
+
             Response.Redirect("searchResult.aspx?keyword=" + txb_search.Text);
 
         }

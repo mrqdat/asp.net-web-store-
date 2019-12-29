@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace GUI.user
+namespace GUI
 {
-    public partial class Profile : System.Web.UI.Page
+    public partial class profile : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

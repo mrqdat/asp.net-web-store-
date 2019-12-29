@@ -70,6 +70,7 @@
     <Content Include="Admin_Dashboard.aspx" />
     <Content Include="DangKi.aspx" />
     <Content Include="DangNhap.aspx" />
+    <Content Include="profile.aspx" />
     <Content Include="QLSanPham.aspx" />
     <Content Include="QLSP.aspx" />
     <Content Include="QLTaiKhoan.aspx" />
@@ -141,7 +142,6 @@
     <Content Include="user\js\map.js" />
     <Content Include="user\js\owl.carousel.min.js" />
     <Content Include="user\Product.aspx" />
-    <Content Include="user\Profile.aspx" />
     <Content Include="user\searchResult.aspx" />
     <Content Include="Web.config" />
     <Content Include="user\index.aspx" />
@@ -167,6 +167,13 @@
     </Compile>
     <Compile Include="DangNhap.aspx.designer.cs">
       <DependentUpon>DangNhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="QLSP.aspx.cs">
       <DependentUpon>QLSP.aspx</DependentUpon>
@@ -238,13 +245,6 @@
     </Compile>
     <Compile Include="user\Product.aspx.designer.cs">
       <DependentUpon>Product.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="user\Profile.aspx.cs">
-      <DependentUpon>Profile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user\Profile.aspx.designer.cs">
-      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\searchResult.aspx.cs">
       <DependentUpon>searchResult.aspx</DependentUpon>

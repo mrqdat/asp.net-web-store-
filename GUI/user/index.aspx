@@ -74,7 +74,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 col-lg-7 text-white">
-                           <%-- <span>New Arrivals</span>
+                            <%-- <span>New Arrivals</span>
                             <h2>Sony</h2>
                             <a href="#" class="site-btn sb-line">DISCOVER</a>
                             <a href="#" class="site-btn sb-white">ADD TO CART</a>--%>
@@ -95,7 +95,7 @@
                             <a href="#" class="site-btn sb-white">ADD TO CART</a>--%>
                         </div>
                     </div>
-                   <%-- <div class="offer-card text-white">
+                    <%-- <div class="offer-card text-white">
                         <span>from</span>
                         <h2>$799</h2>
                         <p>SHOP NOW</p>
@@ -116,7 +116,7 @@
                 <div class="col-md-4 p-0 feature">
                     <div class="feature-inner">
                         <div class="feature-icon">
-                            <asp:Image runat="server" ID="icon1" src="img/icons/1.png" alt="#"/>
+                            <asp:Image runat="server" ID="icon1" src="img/icons/1.png" alt="#" />
                         </div>
                         <h2>Fast Secure Payments</h2>
                     </div>
@@ -124,7 +124,7 @@
                 <div class="col-md-4 p-0 feature">
                     <div class="feature-inner">
                         <div class="feature-icon">
-                            <asp:Image runat="server" ID="icon2" src="img/icons/2.png" alt="#"/>
+                            <asp:Image runat="server" ID="icon2" src="img/icons/2.png" alt="#" />
                         </div>
                         <h2>Premium Products</h2>
                     </div>
@@ -132,7 +132,7 @@
                 <div class="col-md-4 p-0 feature">
                     <div class="feature-inner">
                         <div class="feature-icon">
-                            <asp:Image runat="server" ID="icon3" src="img/icons/3.png" alt="#"/>
+                            <asp:Image runat="server" ID="icon3" src="img/icons/3.png" alt="#" />
                         </div>
                         <h2>Free & fast Delivery</h2>
                     </div>
@@ -148,29 +148,31 @@
                 <h2>LATEST PRODUCTS</h2>
             </div>
             <div class="product-slider owl-carousel">
-                 <asp:Repeater id="rpt_slider" runat="server"  onItemCommand="rpt_slider_ItemCommand">
+                <asp:Repeater ID="rpt_slider" runat="server" OnItemCommand="rpt_slider_ItemCommand">
                     <ItemTemplate>
-                         <div class="product-item">
-                             
-                                <div class="pi-pic">
-                                    <asp:HyperLink id="hpl_sp" runat="server">
-                                        <asp:ImageButton  ID="imgAnhMinhHoa" runat="server" CommandName="xemSP" CommandArgument='<%# Eval("MaSP") %>' ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>'   Width="250px"  OnClick="imgAnhMinhHoa_Click"/></asp:HyperLink>   
-                                    <div class="pi-links">
-<%--                                        <%--<i class=""></i><asp:LinkButton ID="btnThemGH" runat="server" Cssclass="add-card  flaticon-bag"  Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />--%>
-                                        <asp:LinkButton id="btn_addtocart" runat="server" Cssclass="add-card" CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
-                                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-                                    </div>
+                        <div class="product-item">
+
+                            <div class="pi-pic">
+                                <asp:HyperLink ID="hpl_sp" runat="server">
+                                    <asp:ImageButton ID="imgAnhMinhHoa" runat="server" CommandName="xemSP" CommandArgument='<%# Eval("MaSP") %>' ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' Width="250px" OnClick="imgAnhMinhHoa_Click" />
+                                </asp:HyperLink>
+                                <div class="pi-links">
+                                    <%--                                        <%--<i class=""></i><asp:LinkButton ID="btnThemGH" runat="server" Cssclass="add-card  flaticon-bag"  Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />--%>
+                                    <asp:LinkButton ID="btn_addtocart" runat="server" CssClass="add-card" CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
+                                    <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
                                 </div>
-                           
-                                <div class="pi-text">
-                                    <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> <br />
-                                    <asp:Label ID="lblTenSP" CommandName="xemSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
-                                </div>
+                            </div>
+
+                            <div class="pi-text">
+                                <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label>
+                                <br />
+                                <asp:Label ID="lblTenSP" CommandName="xemSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
+                            </div>
                         </div>
-                    </ItemTemplate>            
+                    </ItemTemplate>
                 </asp:Repeater>
-                
-                
+
+
             </div>
         </div>
     </section>
@@ -181,41 +183,48 @@
                 <h2>BROWSE TOP SELLING PRODUCTS</h2>
             </div>
             <ul class="product-filter-menu">
-                
-                <li><asp:LinkButton id="lb_topword" runat="server" type="button"  Text="Canon" OnClick="lb_topword_Click">Canon</asp:LinkButton></li>
-                <li><asp:LinkButton id="lb_topword1" runat="server" type="button"  Text="Nikon" OnClick="lb_topword1_Click">Nikon</asp:LinkButton></li>
-                <li> <asp:LinkButton id="lb_topword2" runat="server" type="button"  Text="Nikkor" OnClick="lb_topword2_Click">Nikkor</asp:LinkButton></li>
-                <li> <asp:LinkButton id="lb_topword3" runat="server" type="button"  Text="85mm 1,8 USM" OnClick="lb_topword3_Click">85mm 1,8 USM</asp:LinkButton></li>
-                <li> <asp:LinkButton id="lb_topword4" runat="server" type="button"  Text="XT-30" OnClick="lb_topword4_Click">XT-30</asp:LinkButton></li>
-                <li> <asp:LinkButton id="lb_topword5" runat="server" type="button"  Text="Sony a7iv" OnClick="lb_topword5_Click">Sony a7iv</asp:LinkButton></li>
-                <li> <asp:LinkButton id="lb_topword6" runat="server" type="button"  Text="Zeiss Batis" OnClick="lb_topword6_Click">Zeiss Batis</asp:LinkButton></li>
+
+                <li>
+                    <asp:LinkButton ID="lb_topword" runat="server" type="button" Text="Canon" OnClick="lb_topword_Click">Canon</asp:LinkButton></li>
+                <li>
+                    <asp:LinkButton ID="lb_topword1" runat="server" type="button" Text="Nikon" OnClick="lb_topword1_Click">Nikon</asp:LinkButton></li>
+                <li>
+                    <asp:LinkButton ID="lb_topword2" runat="server" type="button" Text="Nikkor" OnClick="lb_topword2_Click">Nikkor</asp:LinkButton></li>
+                <li>
+                    <asp:LinkButton ID="lb_topword3" runat="server" type="button" Text="85mm 1,8 USM" OnClick="lb_topword3_Click">85mm 1,8 USM</asp:LinkButton></li>
+                <li>
+                    <asp:LinkButton ID="lb_topword4" runat="server" type="button" Text="XT-30" OnClick="lb_topword4_Click">XT-30</asp:LinkButton></li>
+                <li>
+                    <asp:LinkButton ID="lb_topword5" runat="server" type="button" Text="Sony a7iv" OnClick="lb_topword5_Click">Sony a7iv</asp:LinkButton></li>
+                <li>
+                    <asp:LinkButton ID="lb_topword6" runat="server" type="button" Text="Zeiss Batis" OnClick="lb_topword6_Click">Zeiss Batis</asp:LinkButton></li>
             </ul>
             <div class="row">
 
-                <asp:Repeater id="dtl_sanpham" runat="server"  OnItemCommand="rpt_slider_ItemCommand" >
+                <asp:Repeater ID="dtl_sanpham" runat="server" OnItemCommand="rpt_slider_ItemCommand">
                     <ItemTemplate>
                         <div class="col-lg-3 col-sm-6">
                             <div class="product-item">
                                 <div class="pi-pic">
-                                    <asp:ImageButton ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>'  CommandName="xemSP" Width="260px"/>   
+                                    <asp:ImageButton ID="imgAnhMinhHoa" runat="server" ImageUrl='<%# "img/product/" + Eval("AnhMinhHoa") %>' CommandName="xemSP" Width="260px" />
                                     <div class="pi-links">
-<%--                                        <%--<i class=""></i><asp:LinkButton ID="btnThemGH" runat="server" Cssclass="add-card  flaticon-bag"  Text="ADD TO CART" CommandName="ADD TO CART" CommandArgument='<%# Eval("MaSP") %>' />--%>
-                                        <asp:LinkButton id="btn_addtocart" runat="server"  Cssclass="add-card"  CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
+                                        <asp:LinkButton ID="btn_addtocart" runat="server" CssClass="add-card" CommandName="ThemGH" CommandArgument='<%# Eval("MaSP") %>'><i class="flaticon-bag"></i><span>ADD TO CART</span></asp:LinkButton>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
                                     </div>
                                 </div>
                                 <div class="pi-text">
-                                    <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label> <br />
-                                    <asp:Label ID="lblTenSP"  runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
+                                    <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label>
+                                    <br />
+                                    <asp:Label ID="lblTenSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
                                 </div>
                             </div>
                         </div>
-                    </ItemTemplate>            
+                    </ItemTemplate>
                 </asp:Repeater>
-             </div>
-            
+            </div>
+
             <div class="text-center pt-5">
-                <asp:Button type="button" ID="btn_loadmore" runat="server" CssClass="site-btn sb-line sb-dark" Text="LOAD MORE"   />
+                <asp:Button type="button" ID="btn_loadmore" runat="server" CssClass="site-btn sb-line sb-dark" Text="LOAD MORE" />
             </div>
         </div>
     </section>
@@ -225,8 +234,8 @@
         <div class="container">
             <div class="banner set-bg" data-setbg="img/bg2.jpg">
                 <div class="tag-new">NEW</div>
-                <span style="color:white;">New Product</span>
-                <h2 style="color:white;">R System </h2>
+                <span style="color: white;">New Product</span>
+                <h2 style="color: white;">R System </h2>
                 <a href="#" class="site-btn">SHOP NOW</a>
             </div>
         </div>

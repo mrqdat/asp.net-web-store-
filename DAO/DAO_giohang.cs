@@ -16,7 +16,7 @@ namespace DAO
             string query = "SELECT gh.MaSP,AnhMinhHoa, TenSP, GiaTien, SoLuong, GiaTien * SoLuong AS ThanhTien FROM GioHang gh INNER JOIN SanPham SP ON gh.MaSP = SP.MaSP WHERE TenTaiKhoan = @TenTaiKhoan  ";
             SqlParameter[] param = new SqlParameter[1];
             param[0] = new SqlParameter("@TenTaiKhoan", tenTK);
-             ;
+
             return DataProvider.ExecuteSelectQuery(query, param);
         }
 
@@ -80,7 +80,7 @@ namespace DAO
             string query = "delete GioHang where TenTaiKhoan = @TenTaiKhoan";
             SqlParameter[] param = new SqlParameter[1];
             param[0] = new SqlParameter("@TenTaiKhoan", tentk);
-            
+
             return DataProvider.ExecuteDeleteQuery(query, param) == 1;
         }
     }

@@ -37,7 +37,7 @@ namespace GUI
             if (e.CommandName == "ThemGH")
             {
                 HttpCookie cookie = Request.Cookies["tenTK"];
-                if(cookie != null)
+                if (cookie != null)
                 {
                     string tenTK = cookie.Value;
                     DTO_giohang gh = new DTO_giohang();
@@ -64,7 +64,7 @@ namespace GUI
 
                 }
             }
-            
+
         }
         protected void lb_topword_Click(object sender, EventArgs e)
         {
@@ -97,9 +97,9 @@ namespace GUI
 
         protected void imgAnhMinhHoa_Click(object sender, ImageClickEventArgs e)
         {
-           
+
             Response.Redirect("Product.aspx?id=" + "SP01");
         }
-        
+
     }
 }
