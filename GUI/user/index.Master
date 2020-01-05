@@ -57,7 +57,7 @@
                         </div>
                         <div class="col-xl-6 col-lg-5">
                             <div class="header-search-form">
-                                <asp:TextBox ID="txb_search" runat="server" type="text" placeholder="Search on divisima ...." />
+                                <asp:TextBox ID="txb_search" runat="server" type="text" placeholder="Tìm kiếm divisima ...." />
                                 <button runat="server" onserverclick="btn_search_Click"><i class="flaticon-search"></i></button>
                             </div>
                         </div>
@@ -70,20 +70,20 @@
                                             <i class="flaticon-bag"></i>
                                             <asp:Label ID="lb_amount" runat="server" Text="0"></asp:Label>
                                         </div>
-                                        <a style="color: black;" href="cart.aspx">Shopping Cart</a>
+                                        <a style="color: black;" href="cart.aspx">Giỏ hàng</a>
                                     </div>
                                 </li>
                                 <li><i class="flaticon-profile"></i>
-                                    <asp:Label ID="lb_username" runat="server" ValidateRequestMode="Inherit"><a style="color:black;margin:0;" href="../DangNhap.aspx">Sign In</a> or <a style="color:black;margin:0;" href="../Dangki.aspx">Register</a></asp:Label>
+                                    <asp:Label ID="lb_username" runat="server" ValidateRequestMode="Inherit"><a style="color:black;margin:0;" href="../DangNhap.aspx">Đăng nhập</a> hoặc <a style="color:black;margin:0;" href="../Dangki.aspx">Đăng kí</a></asp:Label>
                                     <div runat="server" id="panel_logout">
                                         <ul class="sub-menu">
                                             <li>
-                                                <asp:LinkButton ID="btn_profile" runat="server" data-dismiss="modal" data-target="#myModal" forecolor="Black" Text="Profile"></asp:LinkButton></li>
+                                                <asp:LinkButton ID="btn_profile" runat="server"  ForeColor="Black" Text="Profile" OnClick="btn_profile_Click"></asp:LinkButton></li>
                                             <li>
                                                 <asp:LinkButton ID="lb_logout" runat="server" OnClick="lb_logout_Click" Text="Sign Out" ForeColor="Black"></asp:LinkButton></li>
                                         </ul>
 
-                                        
+
                                     </div>
 
                                 </li>
@@ -98,7 +98,7 @@
                 <div class="container">
                     <!-- menu -->
                     <ul class="main-menu">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.aspx">Trang chủ</a></li>
                         <li><a href="#">Camera</a>
                             <ul class="sub-menu">
                                 <li><a href="#">Canon</a></li>
@@ -107,12 +107,13 @@
                                 <li><a href="#">Sony</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Lens</a></li>
-                        <li><a href="#">Acsessories
+                        <li><a href="#">Ống kính</a></li>
+                        <li><a href="#">Phụ kiện
 						<span class="new">New</span>
                         </a></li>
-                        
+
                         <li><a href="#">Blog</a></li>
+                        <li><a href="Contact.aspx">Liên hệ</a></li>
                     </ul>
                 </div>
             </nav>

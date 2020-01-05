@@ -16,8 +16,8 @@ namespace GUI.user
             var id = Request.QueryString["id"];
             if (!Page.IsPostBack)
             {
-                DTO_Sanpham sp = new DTO_Sanpham();
                 
+                BUS_Sanpham.LayThongTinsp(id);
             }
         }
     }

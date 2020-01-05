@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="index.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="GUI.user.Contact" %>
 
 <asp:Content ID="contact_content1" ContentPlaceHolderID="head" runat="server">
-    <title>Divisima | Contact</title>
+    <title>Divisima | Liên hệ</title>
     <meta charset="UTF-8">
     <meta name="description" content=" Divisima | eCommerce Template">
     <meta name="keywords" content="divisima, eCommerce, creative, html">
@@ -35,10 +35,10 @@
     <!-- Page info -->
 	<div class="page-top-info">
 		<div class="container">
-			<h4>Contact</h4>
+			<h4>LIên hệ</h4>
 			<div class="site-pagination">
-				<a href="index.aspx">Home</a> /
-				<a href="Contact.aspx">Contact</a>
+				<a href="index.aspx">Trang chủ</a> /
+				<a href="Contact.aspx">Liên hệ</a>
 			</div>
 		</div>
 	</div>
@@ -51,7 +51,7 @@
 			<div class="row">
 				<div class="col-lg-6 contact-info">
 					<h3>Get in touch</h3>
-					<p>Main Str, no 23, New York</p>
+					<p>65, Huỳnh Thúc Kháng, phường Bến Nghé, quận 1, TP HCM</p>
 					<p>+546 990221 123</p>
 					<p>hosting@contact.com</p>
 					<div class="contact-social">
@@ -66,7 +66,7 @@
 						<input type="text" placeholder="Your e-mail">
 						<input type="text" placeholder="Subject">
 						<textarea placeholder="Message"></textarea>
-						<button class="site-btn">SEND NOW</button>
+						<button class="site-btn">Gửi</button>
 					</div>
 				</div>
 			</div>
@@ -77,75 +77,6 @@
 
 
 	<!-- Related product section -->
-	<section class="related-product-section spad">
-		<div class="container">
-			<div class="section-title">
-				<h2>Your Favorites</h2>
-			</div>
-			<div class="row">
-				<div class="col-lg-3 col-sm-6">
-					<div class="product-item">
-						<div class="pi-pic">
-							<div class="tag-new">New</div>
-							<img src="./img/product/2.png" alt="">
-							<div class="pi-links">
-								<a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-							</div>
-						</div>
-						<div class="pi-text">
-							<h6>$35,00</h6>
-							<p>Black and White Stripes Dress</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="product-item">
-						<div class="pi-pic">
-							<img src="./img/product/5.png" alt="">
-							<div class="pi-links">
-								<a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-							</div>
-						</div>
-						<div class="pi-text">
-							<h6>$35,00</h6>
-							<p>Flamboyant Pink Top </p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="product-item">
-						<div class="pi-pic">
-							<img src="./img/product/9.png" alt="">
-							<div class="pi-links">
-								<a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-							</div>
-						</div>
-						<div class="pi-text">
-							<h6>$35,00</h6>
-							<p>Flamboyant Pink Top </p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="product-item">
-						<div class="pi-pic">
-							<img src="./img/product/1.png" alt="">
-							<div class="pi-links">
-								<a href="cart.aspx" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-							</div>
-						</div>
-						<div class="pi-text">
-							<h6>$35,00</h6>
-							<p>Flamboyant Pink Top </p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	
 	<!-- Related product section end -->
 </asp:Content>

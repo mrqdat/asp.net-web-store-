@@ -54,6 +54,11 @@ namespace GUI
 
         }
 
+        protected void btn_profile_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Profiles.aspx");
+        }
+
         protected void btn_search_Click(object sender, EventArgs e)
         {
 

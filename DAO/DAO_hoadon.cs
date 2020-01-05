@@ -32,6 +32,29 @@ namespace DAO
             param[6] = new SqlParameter("@trangthai", hd.Trangthai);
             return DataProvider.ExecuteInsertQuery(query, param) == 1;
         }
-        
+
+        public static DTO_hoadon loaddonhang(string tentk)
+        {
+
+            string query = "select * from HoaDon where TenTaiKhoan =@TenTaiKhoan";
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@TenTaiKhoan", tentk);
+            return ConvertToDTO(DataProvider.ExecuteSelectQuery(query, param).Rows[0]);
+        }
+
+
+        public static  DTO_hoadon ConvertToDTO(DataRow dr)
+        {
+            DTO_hoadon hd = new DTO_hoadon();
+            hd.Mahd = dr["MaHD"].ToString();
+            hd.Tentaikhoan = dr["TenTaiKhoan"].ToString();
+            hd.Ngaymua = Convert.ToDateTime(dr["NgayMua"]);
+            
+            hd.Tongtien = Convert.ToInt32(dr["TongTien"]);
+            //hd.Diachi = dr["DiaChi"].ToString();
+            hd.Trangthai = Convert.ToBoolean(dr["TrangThai"]);
+            
+            return hd;
+        }
     }
 }

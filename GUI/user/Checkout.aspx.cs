@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 using BUS;
 using DTO;
 
@@ -67,9 +68,9 @@ namespace GUI.user
         {
             HttpCookie cookie = Request.Cookies["tenTK"];
             string tentk = cookie.Value;
-            lbfee.Text = "+ $3.45";
+            lbfee.Text = "+ $3.00";
 
-            double tong = BUS_giohang.tinhtien(tentk) + 3.45;
+            int tong = BUS_giohang.tinhtien(tentk) + 3;
 
             lbltong.Text = tong.ToString();
         }
@@ -77,7 +78,40 @@ namespace GUI.user
         protected void ship1_CheckedChanged(object sender, EventArgs e)
         {
             lbfee.Text = "Free";
-           
+
+        }
+       
+
+        protected void btnorder_Click1(object sender, EventArgs e)
+        {
+            HttpCookie cookie = Request.Cookies["tenTK"];
+            string tentk = cookie.Value;
+            if (cookie != null && string.IsNullOrEmpty(txb_hoten.Text) && string.IsNullOrEmpty(txb_diachi.Text) && string.IsNullOrEmpty(txb_sdt.Text))
+            {
+                string tenTK = cookie.Value;
+
+                DTO_hoadon hd = new DTO_hoadon();
+                DTO_cthoadon cthd = new DTO_cthoadon();
+
+                TaiKhoanDTO tk = TaiKhoanBUS.LayThongTinTaiKhoan(tenTK);
+                hd.Tentaikhoan = tk.TenTaiKhoan;
+                hd.Diachi = tk.DiaChi;
+                hd.Ngaymua = DateTime.Now;
+                int tong = BUS_giohang.tinhtien(tentk) + 3;
+                hd.Tongtien = tong;
+                hd.Sdt = tk.SDT;
+                BUS_hoadon.themhoadon(hd);
+
+
+                cthd.Mahd = hd.Mahd;
+                cthd.Dongia = hd.Tongtien;
+                BUS_giohang.xoagh(tentk);
+                Response.Redirect("index.aspx");
+            }
+            else
+            {
+                Response.Write("<script>alert('dat hang that bai')</script>")
+            }
         }
     }
 }

@@ -131,9 +131,6 @@
                                     </Columns>
 
                                 </asp:GridView>
-
-
-
                             </div>
 
                         </div>
@@ -149,50 +146,7 @@
                         <button>Submit</button>
                     </div>
                     <asp:LinkButton ID="btn_ttoan" runat="server" Type="button" CssClass="site-btn"  Text="Thanh Toán" OnClick="btn_ttoan_Click" />
-
-
-                    <%--modal hiển thị chi tiết hóa đơn--%>
-
-                    <%--<div class="modal fade" id="myModal" role="dialog" >
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-
-                                    <h4 class="modal-title">Thông tin đơn hàng</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <h4 class="card-title">Mã hóa đơn:</h4>
-                                    <asp:TextBox ID="txb_mahd" runat="server" CssClass="form-control" Text="#######" Enabled="false"></asp:TextBox>
-                                    <h4 class="card-title">Tên người mua:</h4>
-                                    <asp:TextBox ID="txb_tenTK" runat="server" CssClass="form-control" ForeColor="Black" Text=""></asp:TextBox>
-                                    <h4 class="card-title">Ngày mua:</h4>
-                                    <asp:TextBox ID="txb_ngaymua" runat="server" CssClass="form-control" Enabled="false" Text=""></asp:TextBox>
-                                    <h4 class="card-title">Địa chỉ giao hàng:</h4>
-                                    <asp:TextBox ID="txb_diachi" runat="server" CssClass="form-control" Text=""></asp:TextBox>
-                                    <h4 class="card-title">SDT người nhận:</h4>
-                                    <asp:TextBox ID="txb_sdt" runat="server" CssClass="form-control" Text=""></asp:TextBox>
-
-                                </div>
-                                <div class="modal-footer">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <h4 class="card-title">Tổng tiền:</h4>
-                                                <asp:Label ID="lb_tongtien" runat="server" Text=" "></asp:Label>
-
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <asp:Button runat="server" ID="btn_cnthanhtoan" type="button" CssClass="btn btn-default" data-dismiss="modal" Style="float: right;" OnClick="btn_cnthanhtoan_Click1" Text="Chấp nhận và thanh toán " />
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>--%>
-
+ 
                     <asp:LinkButton type="button" ID="btn_ttmuahang" runat="server" CssClass="site-btn sb-dark" OnClick="btn_ttmuahang_Click">Tiếp tục mua hàng</asp:LinkButton>
                 </div>
             </div>

@@ -32,6 +32,11 @@ namespace BUS
             }
         }
 
+        public static DTO_hoadon loadhoadon(string tentk)
+        {
+            return DAO_hoadon.loaddonhang(tentk);
+        }
+
     }
 }
 

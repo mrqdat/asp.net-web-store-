@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="index.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="GUI.user.Category" %>
 
 <asp:Content ID="categoty_content1" ContentPlaceHolderID="head" runat="server">
-    <title>Divisima | Product</title>
+    <title>Divisima | Thể loại</title>
     <meta charset="UTF-8">
     <meta name="description" content=" Divisima | eCommerce Template">
     <meta name="keywords" content="divisima, eCommerce, creative, html">
@@ -36,10 +36,10 @@
     <!-- Page info -->
     <div class="page-top-info">
         <div class="container">
-            <h4>CAtegory PAge</h4>
+            <h4>Thể loại</h4>
             <div class="site-pagination">
-                <a href="index.aspx">Home</a> /
-				<a href="#">Shop</a> /
+                <a href="index.aspx">Trang chủ</a> /
+				<a href="#">thể loại</a>
             </div>
         </div>
     </div>

@@ -166,7 +166,7 @@
                             <div class="pi-text">
                                 <asp:Label ID="lblGiaTien" runat="server" Text='<%# Eval("GiaTien") %>'> </asp:Label>
                                 <br />
-                                <asp:Label ID="lblTenSP" CommandName="xemSP" runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
+                                <asp:Label ID="lblTenSP"   runat="server" Text='<%# Eval("TenSP") %>'></asp:Label>
                             </div>
                         </div>
                     </ItemTemplate>

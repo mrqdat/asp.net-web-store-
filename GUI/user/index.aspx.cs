@@ -64,6 +64,11 @@ namespace GUI
 
                 }
             }
+            else if(e.CommandName =="xemSP")
+            {
+                string tensp = e.CommandArgument.ToString();
+                Response.Redirect("Product.aspx?id=" + tensp.ToString() );
+            }
 
         }
         protected void lb_topword_Click(object sender, EventArgs e)

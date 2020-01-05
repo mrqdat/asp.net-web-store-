@@ -70,7 +70,6 @@
     <Content Include="Admin_Dashboard.aspx" />
     <Content Include="DangKi.aspx" />
     <Content Include="DangNhap.aspx" />
-    <Content Include="profile.aspx" />
     <Content Include="QLSanPham.aspx" />
     <Content Include="QLSP.aspx" />
     <Content Include="QLTaiKhoan.aspx" />
@@ -141,8 +140,39 @@
     <Content Include="user\js\main.js" />
     <Content Include="user\js\map.js" />
     <Content Include="user\js\owl.carousel.min.js" />
+    <Content Include="user\Profiles.aspx" />
     <Content Include="user\Product.aspx" />
     <Content Include="user\searchResult.aspx" />
+    <Content Include="user\vendors\animate-css\animate.css" />
+    <Content Include="user\vendors\animate-css\wow.min.js" />
+    <Content Include="user\vendors\bootstrap-datepicker\bootstrap-datetimepicker.min.css" />
+    <Content Include="user\vendors\bootstrap-datepicker\bootstrap-datetimepicker.min.js" />
+    <Content Include="user\vendors\bootstrap-datepicker\bootstrap-select.css" />
+    <Content Include="user\vendors\bootstrap-datepicker\bootstrap-select.js" />
+    <Content Include="user\vendors\counter-up\jquery.counterup.min.js" />
+    <Content Include="user\vendors\counter-up\jquery.waypoints.min.js" />
+    <Content Include="user\vendors\flaticon\flaticon.css" />
+    <Content Include="user\vendors\flaticon\Flaticon.svg" />
+    <Content Include="user\vendors\flaticon\_flaticon.css" />
+    <Content Include="user\vendors\isotope\imagesloaded.pkgd.min.js" />
+    <Content Include="user\vendors\isotope\isotope.pkgd.min.js" />
+    <Content Include="user\vendors\jquery-ui\jquery-ui.css" />
+    <Content Include="user\vendors\jquery-ui\jquery-ui.js" />
+    <Content Include="user\vendors\lightbox\simpleLightbox.css" />
+    <Content Include="user\vendors\lightbox\simpleLightbox.min.js" />
+    <Content Include="user\vendors\linericon\fonts\Linearicons-Free.svg" />
+    <Content Include="user\vendors\linericon\style.css" />
+    <Content Include="user\vendors\nice-select\css\nice-select.css" />
+    <Content Include="user\vendors\nice-select\css\style.css" />
+    <Content Include="user\vendors\nice-select\js\jquery.nice-select.js" />
+    <Content Include="user\vendors\nice-select\js\jquery.nice-select.min.js" />
+    <Content Include="user\vendors\owl-carousel\assets\ajax-loader.gif" />
+    <Content Include="user\vendors\owl-carousel\assets\animated.css" />
+    <Content Include="user\vendors\owl-carousel\assets\owl.carousel.css" />
+    <Content Include="user\vendors\owl-carousel\owl.carousel.min.css" />
+    <Content Include="user\vendors\owl-carousel\owl.carousel.min.js" />
+    <Content Include="user\vendors\popup\jquery.magnific-popup.min.js" />
+    <Content Include="user\vendors\popup\magnific-popup.css" />
     <Content Include="Web.config" />
     <Content Include="user\index.aspx" />
   </ItemGroup>
@@ -167,13 +197,6 @@
     </Compile>
     <Compile Include="DangNhap.aspx.designer.cs">
       <DependentUpon>DangNhap.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="profile.aspx.cs">
-      <DependentUpon>profile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="profile.aspx.designer.cs">
-      <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="QLSP.aspx.cs">
       <DependentUpon>QLSP.aspx</DependentUpon>
@@ -239,6 +262,13 @@
     <Compile Include="user\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="user\Profiles.aspx.cs">
+      <DependentUpon>Profiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\Profiles.aspx.designer.cs">
+      <DependentUpon>Profiles.aspx</DependentUpon>
+    </Compile>
     <Compile Include="user\Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -272,6 +302,16 @@
     <Content Include="user\Source\sass\style.scss" />
     <Content Include="user\Source\SlickNav-master.zip" />
     <Content Include="user\Source\zoom-master.zip" />
+    <Content Include="user\vendors\.DS_Store" />
+    <Content Include="user\vendors\flaticon\Flaticon.eot" />
+    <Content Include="user\vendors\flaticon\Flaticon.ttf" />
+    <Content Include="user\vendors\flaticon\Flaticon.woff" />
+    <Content Include="user\vendors\flaticon\_flaticon.css.map" />
+    <Content Include="user\vendors\flaticon\_flaticon.scss" />
+    <Content Include="user\vendors\linericon\fonts\Linearicons-Free.eot" />
+    <Content Include="user\vendors\linericon\fonts\Linearicons-Free.ttf" />
+    <Content Include="user\vendors\linericon\fonts\Linearicons-Free.woff" />
+    <Content Include="user\vendors\linericon\fonts\Linearicons-Free.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

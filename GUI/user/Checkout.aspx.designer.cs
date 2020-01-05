@@ -31,6 +31,15 @@ namespace GUI.user {
         protected global::System.Web.UI.WebControls.RadioButton rd_dc2;
         
         /// <summary>
+        /// rfv_dc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_dc;
+        
+        /// <summary>
         /// txb_diachi control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace GUI.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txb_diachi;
+        
+        /// <summary>
+        /// rvf_hoten control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvf_hoten;
         
         /// <summary>
         /// txb_hoten control.
@@ -58,6 +76,24 @@ namespace GUI.user {
         protected global::System.Web.UI.WebControls.TextBox txb_zopcode;
         
         /// <summary>
+        /// rfv_sdt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_sdt;
+        
+        /// <summary>
+        /// rev_sdt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_sdt;
+        
+        /// <summary>
         /// txb_sdt control.
         /// </summary>
         /// <remarks>
@@ -65,6 +101,15 @@ namespace GUI.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txb_sdt;
+        
+        /// <summary>
+        /// txb_note control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txb_note;
         
         /// <summary>
         /// ship1 control.
@@ -83,6 +128,15 @@ namespace GUI.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton ship2;
+        
+        /// <summary>
+        /// btnorder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnorder;
         
         /// <summary>
         /// rpt_prdlist control.
